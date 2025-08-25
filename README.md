@@ -61,7 +61,7 @@ git push
 1. Place all AIs inside `ai_players/` (each in its own folder).
 2. Run:
    ```bash
-   python -m tournament.run
+   python -m tournament.runner
    ```
 3. View the results: win rates, performance stats, and more.
 
