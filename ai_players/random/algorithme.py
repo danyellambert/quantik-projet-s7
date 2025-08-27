@@ -1,4 +1,4 @@
-# ai_players/danyel/algorithme.py
+# ai_players/random/algorithme.py
 # -------------------------------------------------------------------
 # IA minimaliste : génère tous les coups valides et choisit au hasard.
 # Conforme aux règles du sujet et compatible avec la GUI fournie.
