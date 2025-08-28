@@ -5,6 +5,7 @@
 # - Pour chaque pair (A,B) et chaque seed:
 #     * 2 parties: A commence, B commence
 # - Affiche WR(A) + IC 95%, StartsWon/RepliesWon
+# - Affiche TimeUsed(A) et TimeUsed(B) (temps total de calcul)
 # - Résumé agrégé, Elo approximatif et matrice
 # ----------------------------------------------------------
 from __future__ import annotations
@@ -84,8 +85,16 @@ def filter_mute_ais(ais, do_filter=True):
             excluded.append(a["name"])
     return kept, excluded
 
-# ============= Moteur d'une partie =============
+# ============= Moteur d'une partie (avec chronométrage) =============
 def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int] = None) -> Tuple[Player, Dict[str,int]]:
+    """
+    A = Player1, B = Player2.
+    Chronomètre le temps passé dans get_move() de chaque IA et renvoie:
+      winner, {
+        'A_started', 'A_won_start', 'A_won_reply',
+        'timeA', 'timeB'  # temps total de calcul de cette partie
+      }
+    """
     if seed is not None:
         random.seed(seed)
 
@@ -94,23 +103,42 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int] = None)
         Player.PLAYER1: {s: 2 for s in Shape},
         Player.PLAYER2: {s: 2 for s in Shape},
     }
-    aiA = aiA_cls(Player.PLAYER1)  # A est toujours P1
-    aiB = aiB_cls(Player.PLAYER2)  # B est toujours P2
+    aiA = aiA_cls(Player.PLAYER1)  # A est P1
+    aiB = aiB_cls(Player.PLAYER2)  # B est P2
 
     current = starter
     A_started = 1 if starter == Player.PLAYER1 else 0
     A_won_start = 0
     A_won_reply = 0
 
+    # accumulateurs de temps
+    timeA = 0.0
+    timeB = 0.0
+
     while True:
         ai = aiA if current == Player.PLAYER1 else aiB
+
+        # chronométrage autour de get_move
+        t0 = time.perf_counter()
         move = ai.get_move(raw_board(board), pieces)
+        dt = time.perf_counter() - t0
+        if current == Player.PLAYER1:
+            timeA += dt
+        else:
+            timeB += dt
+
         if not move:
             winner = Player.PLAYER2 if current == Player.PLAYER1 else Player.PLAYER1
             if winner == Player.PLAYER1:
                 if A_started: A_won_start = 1
                 else:         A_won_reply = 1
-            return winner, {"A_started": A_started, "A_won_start": A_won_start, "A_won_reply": A_won_reply}
+            return winner, {
+                "A_started": A_started,
+                "A_won_start": A_won_start,
+                "A_won_reply": A_won_reply,
+                "timeA": timeA,
+                "timeB": timeB
+            }
 
         r, c, shape = move
         if not board.place_piece(r, c, Piece(shape, current)):
@@ -118,7 +146,13 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int] = None)
             if winner == Player.PLAYER1:
                 if A_started: A_won_start = 1
                 else:         A_won_reply = 1
-            return winner, {"A_started": A_started, "A_won_start": A_won_start, "A_won_reply": A_won_reply}
+            return winner, {
+                "A_started": A_started,
+                "A_won_start": A_won_start,
+                "A_won_reply": A_won_reply,
+                "timeA": timeA,
+                "timeB": timeB
+            }
 
         pieces[current][shape] -= 1
         if board.check_victory():
@@ -126,7 +160,13 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int] = None)
             if winner == Player.PLAYER1:
                 if A_started: A_won_start = 1
                 else:         A_won_reply = 1
-            return winner, {"A_started": A_started, "A_won_start": A_won_start, "A_won_reply": A_won_reply}
+            return winner, {
+                "A_started": A_started,
+                "A_won_start": A_won_start,
+                "A_won_reply": A_won_reply,
+                "timeA": timeA,
+                "timeB": timeB
+            }
 
         current = Player.PLAYER2 if current == Player.PLAYER1 else Player.PLAYER1
 
@@ -154,6 +194,7 @@ def run_pair_quick(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: int =
       - joga 2*games_per_seed partidas:
          * para cada g: A começa (P1), depois B começa (P2)
     games_per_seed=1 => por seed são 2 partidas (A-start e B-start).
+    Acumula o tempo total de cálculo (get_move) por IA nesse par.
     """
     Aname, Bname = iaA["name"], iaB["name"]
     wA = wB = 0
@@ -161,13 +202,17 @@ def run_pair_quick(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: int =
     A_replies_won = 0
     t0 = time.time()
 
+    total_timeA = 0.0
+    total_timeB = 0.0
+
     for seed in seeds:
-        # jogamos 'games_per_seed' pares (A-start / B-start)
         for g in range(games_per_seed):
             base = seed * 10_000 + g
 
             # A começa
             winner, loc = play_one_game(iaA["cls"], iaB["cls"], starter=Player.PLAYER1, seed=base+1)
+            total_timeA += loc.get("timeA", 0.0)
+            total_timeB += loc.get("timeB", 0.0)
             if winner == Player.PLAYER1:
                 wA += 1
                 A_starts_won += loc["A_won_start"]
@@ -175,8 +220,10 @@ def run_pair_quick(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: int =
             else:
                 wB += 1
 
-            # B começa (A responde)
+            # B commence (A répond)
             winner, loc = play_one_game(iaA["cls"], iaB["cls"], starter=Player.PLAYER2, seed=base+2)
+            total_timeA += loc.get("timeA", 0.0)
+            total_timeB += loc.get("timeB", 0.0)
             if winner == Player.PLAYER1:
                 wA += 1
                 A_starts_won += loc["A_won_start"]
@@ -188,10 +235,15 @@ def run_pair_quick(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: int =
     games = wA + wB
     wr = wA / games if games else 0.0
     lo, hi = wilson_interval(wA, games)
+
+    def fmt(s): return f"{s:.1f}s"
+
     print(f"{Aname} vs {Bname} -> {wA}-{wB} sur {games} | "
           f"WR(A)={wr:.3f} (95% CI: {lo:.3f}-{hi:.3f}) | "
           f"StartsWon(A)={A_starts_won}, RepliesWon(A)={A_replies_won} | "
-          f"{elapsed:.1f}s")
+          f"{elapsed:.1f}s total | "
+          f"TimeUsed(A)={fmt(total_timeA)}, TimeUsed(B)={fmt(total_timeB)}")
+
     return {
         "A": Aname, "B": Bname,
         "wA": wA, "wB": wB, "games": games,
@@ -199,6 +251,8 @@ def run_pair_quick(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: int =
         "time": elapsed,
         "A_starts_won": A_starts_won,
         "A_replies_won": A_replies_won,
+        "time_used_A": total_timeA,
+        "time_used_B": total_timeB,
     }
 
 # ============= Agregação/relatórios =============
@@ -227,13 +281,12 @@ def aggregate(results: List[Dict]):
     for (name, w, l, wr, lo, hi) in lines:
         print(f"{name:28s} {w:4d}-{l:<4d}  WR={wr:.3f}  (95% CI {lo:.3f}-{hi:.3f})")
 
-    # Elo aproximado
+    # Elo aproximado (usando score agregado do duelo)
     elo = {name: 1000.0 for name in totals.keys()}
     for r in results:
         A, B = r["A"], r["B"]
         wA, wB = r["wA"], r["wB"]
         games = max(1, wA + wB)
-        # atualiza com score agregado dessa dupla
         scoreA = wA / games
         elo[A], elo[B] = elo_update(elo[A], elo[B], scoreA, k=24.0)
 
@@ -261,8 +314,9 @@ def aggregate(results: List[Dict]):
 # ============= Main (parâmetros “rápidos”) =============
 def main():
     # Seeds curtas e poucas partidas por seed (rápido!)
-    SEEDS = [101, 202, 303, 404, 505, 606, 707]  # mais seeds
-    GAMES_PER_SEED = 2                           # mais partidas por seed
+    SEEDS = [101, 202, 303, 404, 505, 606, 707, 808, 909]  # experimente ajustar
+    #SEEDS = [101, 202]  # experimente ajustar
+    GAMES_PER_SEED = 3                           # 2 pares por seed => 4 jogos/seed
     FILTER_MUTE = True
 
     ais, errors = discover_ais()
