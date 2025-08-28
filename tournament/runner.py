@@ -1,6 +1,6 @@
 # tournament/runner.py
 # =====================================================================================
-# Tournoi IA vs IA (diagnostic complet + couches « pro »)
+# Tournoi IA vs IA (diagnostic complet + couches « pro ») 
 # - Découvre les IA dans ai_players/*/algorithme.py (classe QuantikAI, constante AI_NAME)
 # - Filtre les IA « muettes » via un probe avec délai (timeout)
 # - Round-robin A<B ; pour chaque graine (seed), joue 2 parties (A commence / B commence) × GAMES_PER_SEED
