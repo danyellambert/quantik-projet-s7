@@ -1,39 +1,29 @@
 # tournament/runner.py
 # =====================================================================================
-# Tournoi IA vs IA (diagnostic complet + couches pro)
+# Tournoi IA vs IA (diagnostic complet + couches pro) — RUNS VERSIONNÉS
 # -------------------------------------------------------------------------------------
-# Ce runner conserve TOUT ce que le runner “diagnostic” faisait :
+# Inclus :
 #   • découverte d’IAs, filtrage des muettes, round-robin, seeds + starters A/B
-#   • logs par PARTIE (games.csv) et par COUP (moves.csv / moves.jsonl)
-#   • métriques de diagnostic : nb de coups légaux, forcés, gains immédiats ratés,
-#     coups qui donnent une victoire immédiate à l’adversaire, longueur moyenne, etc.
-#   • résumé par paire + agrégat global + matrice A×B + ELO approx.
+#   • logs par PARTIE (games_*.csv) et par COUP (moves_*.csv / moves_*.jsonl)
+#   • métriques : nb de coups légaux, forcés, wins manquées, “gave win”, longueurs…
+#   • résumé par paire + agrégat global + matrice A×B + ELO approx. + Glicko-1
+#   • Bootstrap (IC empirique du WR), SPRT (optionnel)
 #
-# …et ajoute des couches “pro” :
-#   • (Optionnel) Contrôle de temps harmonisé : TIME_PER_MOVE appliqué si défini
-#   • SPRT (Sequential Probability Ratio Test) pour arrêt anticipé d’un duel A×B
-#   • (Optionnel) Bootstrap pour IC empirique du WR
-#   • Glicko-1 (rating + RD) – calcul séquentiel par partie
-#   • Impressions console uniformisées en A/B (jamais PLAYER1/2)
-#   • Moyenne de branche par TOUR (turn) — correctif
-#
-# MOD (2025-08) – corrections et ajouts clés :
-#   • other() corrigée (toujours l’adversaire)
-#   • _write_game signature stable et appels alignés
-#   • Moyenne de branche par TOUR (pas par partie)
-#   • Graine unique par partie (seed_base = seed*10000 + 2*g ; Astart=+1, Bstart=+2)
-#   • Temps par coup standardisé via set_time_budget() si TIME_PER_MOVE n’est pas None
-#   • SPRT, Bootstrap, métriques “qualité/coût” (t/c, miss/100, gave/100)
-#   • NOUVEAU: Classement Glicko-1 (r ± RD), calculé sur toutes les parties
+# NOUVEAU (anti-overwrite + traçabilité) :
+#   • Chaque exécution crée un dossier OUT/YYYYMMDD-HHMMSS/
+#   • Fichiers nommés com timestamp : games_<stamp>.csv, moves_<stamp>.csv, moves_<stamp>.jsonl
+#   • run_metadata.json com TOUTES les configs + infos d’environnement + IAs découvertes/exclues
 # =====================================================================================
 
 from __future__ import annotations
-import importlib, pkgutil, pathlib, random, time, math, threading, csv, json
+import importlib, pkgutil, pathlib, random, time, math, threading, csv, json, datetime, platform
 from typing import List, Dict, Tuple, Optional, Any
 from collections import Counter, defaultdict
 
 from core.types import Shape, Player, Piece
 from core.rules import QuantikBoard
+
+VERSION = "runner_diagnostic_plus v2025-08-27"
 
 # ===================== Config ======================
 # • Pour ~10 IA, ces réglages donnent un volume raisonnable.
@@ -43,33 +33,31 @@ GAMES_PER_SEED = 8
 FILTER_MUTE   = True
 PROBE_TIMEOUT = 1.75    # un peu permissif pour éviter les faux négatifs
 
-# Contrôle de temps harmonisé (optionnel).
-# Mettre None pour **ne pas limiter** (chaque IA utilise le temps qu’elle veut).
-TIME_PER_MOVE = None     # secondes par coup (None = pas de cap)
+# Contrôle de temps harmonisé (optionnel). None = pas de cap.
+TIME_PER_MOVE = None     # secondes par coup
 
-# SPRT (arrêt anticipé par paire) – activez pour accélérer les tournois larges
+# SPRT (arrêt anticipé par paire) – désactivé par défaut
 USE_SPRT   = False
 SPRT_P0    = 0.50     # H0: p = 0.50 (égalité)
-SPRT_P1    = 0.60     # H1: p = 0.60 (A significativement meilleur)
+SPRT_P1    = 0.60     # H1: p = 0.60 (A > B de façon significative)
 SPRT_ALPHA = 0.05     # risque de faux-positif 5%
 SPRT_BETA  = 0.10     # risque de faux-négatif 10%
 
-# Bootstrap (désactivé par défaut pour la vitesse)
-BOOTSTRAP_N = 2000       # mettre 2000 pour IC empirique du WR
+# Bootstrap (IC empirique)
+BOOTSTRAP_N = 2000
 
 # Glicko-1 (rating) – activé par défaut
 USE_GLICKO = True
 GLICKO_START_RATING = 1500.0
 GLICKO_START_RD     = 350.0   # incertitude initiale
-# (Pas de “decay” d’inactivité ici ; on met à jour RD uniquement via parties.)
 
 # Verbosité console
 SHOW_PER_GAME_LINES = True    # une ligne par partie
 FIRST_PLIES_TO_LOG  = 4
 TOP_OPENINGS_TO_SHOW = 8
 
-# Export
-OUT_DIR     = pathlib.Path(__file__).resolve().parents[1] / "tournament" / "out"
+# Export (root)
+OUT_DIR = pathlib.Path(__file__).resolve().parents[1] / "tournament" / "out"
 WRITE_CSV   = True
 WRITE_JSONL = True
 # ===================================================
@@ -110,23 +98,17 @@ def zone_index(r: int, c: int) -> int:
     return 3
 
 def is_valid_move(board_grid, row: int, col: int, shape: Shape, me: Player) -> bool:
-    """
-    Légalité Quantik (conforme à vos IAs) :
-    Interdit si **l’adversaire** a déjà posé la même forme dans la ligne/colonne/zone.
-    """
+    """Interdit si l’adversaire a déjà posé la même forme dans la ligne/colonne/zone."""
     if board_grid[row][col] is not None:
         return False
-    # ligne
     for cc in range(N):
         p = board_grid[row][cc]
         if p is not None and p.shape == shape and p.player != me:
             return False
-    # colonne
     for rr in range(N):
         p = board_grid[rr][col]
         if p is not None and p.shape == shape and p.player != me:
             return False
-    # zone
     z = zone_index(row, col)
     for (rr, cc) in ZONES[z]:
         p = board_grid[rr][cc]
@@ -147,7 +129,7 @@ def generate_valid_moves(board_grid, me: Player, my_counts: Dict[Shape,int]) -> 
     return moves
 
 def opening_key(open_moves: List[Tuple[int,int,Shape]]) -> str:
-    """Signature courte des premiers coups (utilisée pour les stats d’ouvertures)."""
+    """Signature courte des premiers coups (pour stats d’ouvertures)."""
     return " | ".join(f"{r},{c},{sh.name}" for (r,c,sh) in open_moves)
 
 
@@ -178,10 +160,7 @@ def discover_ais():
 
 # ============= Probe “IA muette” =============
 def probe_ai_speaks(ai_cls, timeout: float = PROBE_TIMEOUT) -> bool:
-    """
-    Démarre l’IA sur la position initiale. Si aucun coup légal n’arrive
-    dans le délai, on l’exclut (évite deadlocks en tournoi).
-    """
+    """Démarre l’IA sur la position initiale ; si pas de coup légal dans le délai → exclue."""
     b, pieces = empty_position()
     board_raw = raw_board(b)
     okbox = {"ok": False}
@@ -210,11 +189,7 @@ def filter_mute_ais(ais, do_filter=True):
 
 # ============= Réglage du temps par coup (équité, optionnel) =============
 def set_time_budget(ai_obj, seconds: Optional[float]):
-    """
-    Si 'seconds' est None → no-op (ne rien imposer).
-    Sinon, fixe le budget-temps par coup si l’IA expose un attribut standard
-    (couvre variantes : time_limit, total_time, think_time, budget, max_time_per_move).
-    """
+    """Si seconds=None → no-op. Sinon, tente de fixer un attribut standard de budget."""
     if seconds is None:
         return
     for attr in ["time_limit", "total_time", "think_time", "budget", "max_time_per_move"]:
@@ -255,8 +230,7 @@ def elo_update(ra: float, rb: float, sa: float, k: float = 24.0) -> Tuple[float,
     return ra + k * (sa - ea), rb + k * ((1 - sa) - eb)
 
 # ---------- Glicko-1 (sans volatilité, mise à jour séquentielle par partie) ----------
-# Référence : Glickman (2001), “The Glicko System”
-GL_Q = math.log(10) / 400.0  # q
+GL_Q = math.log(10) / 400.0
 def glicko_g(rd: float) -> float:
     return 1.0 / math.sqrt(1.0 + (3.0 * (GL_Q**2) * (rd**2)) / (math.pi**2))
 
@@ -264,19 +238,13 @@ def glicko_E(r: float, rj: float, rdj: float) -> float:
     return 1.0 / (1.0 + 10.0 ** (-glicko_g(rdj) * (r - rj) / 400.0))
 
 def glicko_update_once(rA: float, rdA: float, rB: float, rdB: float, sA: float) -> Tuple[float,float,float,float]:
-    """
-    Met à jour (rA, rdA) et (rB, rdB) après UNE partie, résultat sA pour A (1/0).
-    Retourne (rA', rdA', rB', rdB').
-    """
-    # Joueur A
+    """Met à jour (rA, rdA) et (rB, rdB) après une partie (sA=1/0)."""
     gB = glicko_g(rdB)
     EA = glicko_E(rA, rB, rdB)
     vA = 1.0 / ((GL_Q**2) * (gB**2) * EA * (1.0 - EA) + 1e-12)
     d2A_inv = (1.0 / (rdA**2)) + (1.0 / vA)
     rdA_new = math.sqrt(1.0 / d2A_inv)
     rA_new  = rA + (GL_Q / d2A_inv) * (gB * (sA - EA))
-
-    # Joueur B (résultat opposé)
     sB = 1.0 - sA
     gA = glicko_g(rdA)
     EB = glicko_E(rB, rA, rdA)
@@ -284,8 +252,6 @@ def glicko_update_once(rA: float, rdA: float, rB: float, rdB: float, sA: float) 
     d2B_inv = (1.0 / (rdB**2)) + (1.0 / vB)
     rdB_new = math.sqrt(1.0 / d2B_inv)
     rB_new  = rB + (GL_Q / d2B_inv) * (gA * (sB - EB))
-
-    # Clamp RD à [30, 350] pour stabilité (optionnel)
     rdA_new = max(30.0, min(350.0, rdA_new))
     rdB_new = max(30.0, min(350.0, rdB_new))
     return rA_new, rdA_new, rB_new, rdB_new
@@ -293,34 +259,101 @@ def glicko_update_once(rA: float, rdA: float, rB: float, rdB: float, sA: float) 
 
 # ============= SPRT (arrêt anticipé) =============
 def sprt_update_decision(wins: int, losses: int, p0: float, p1: float, alpha: float, beta: float) -> Optional[str]:
-    """
-    SPRT pour Bernoulli (sans nulles) :
-      H0: p = p0  vs  H1: p = p1  (p1 > p0)
-    Retourne "accept_H1" / "accept_H0" / None (continuer).
-    """
+    """SPRT Bernoulli (sans nulles) : retourne 'accept_H1' / 'accept_H0' / None."""
     n = wins + losses
     if n == 0:
         return None
     llr = wins * math.log(p1/p0) + losses * math.log((1-p1)/(1-p0))
     A = math.log((1 - beta) / alpha)
     B = math.log(beta / (1 - alpha))
-    if llr >= A:
-        return "accept_H1"
-    if llr <= B:
-        return "accept_H0"
+    if llr >= A: return "accept_H1"
+    if llr <= B: return "accept_H0"
     return None
+
+
+# ============= I/O Helpers (run dir + metadata + fichiers horodatés) =============
+def _prepare_run_dir():
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.datetime.utcnow().strftime("%Y%m%d-%H%M%S")
+    run_dir = OUT_DIR / stamp
+    run_dir.mkdir(parents=True, exist_ok=True)
+    return stamp, run_dir
+
+def _initial_metadata(stamp: str, run_dir: pathlib.Path) -> Dict[str, Any]:
+    return {
+        "version": VERSION,
+        "timestamp_utc": datetime.datetime.utcnow().isoformat(timespec="seconds"),
+        "run_tag": stamp,
+        "out_dir": str(run_dir),
+        "config": {
+            "SEEDS": SEEDS,
+            "GAMES_PER_SEED": GAMES_PER_SEED,
+            "FILTER_MUTE": FILTER_MUTE,
+            "PROBE_TIMEOUT": PROBE_TIMEOUT,
+            "TIME_PER_MOVE": TIME_PER_MOVE,
+            "USE_SPRT": USE_SPRT,
+            "SPRT": {"p0": SPRT_P0, "p1": SPRT_P1, "alpha": SPRT_ALPHA, "beta": SPRT_BETA},
+            "BOOTSTRAP_N": BOOTSTRAP_N,
+            "USE_GLICKO": USE_GLICKO,
+            "GLICKO_START_RATING": GLICKO_START_RATING,
+            "GLICKO_START_RD": GLICKO_START_RD,
+            "SHOW_PER_GAME_LINES": SHOW_PER_GAME_LINES,
+            "FIRST_PLIES_TO_LOG": FIRST_PLIES_TO_LOG,
+            "TOP_OPENINGS_TO_SHOW": TOP_OPENINGS_TO_SHOW,
+            "WRITE_CSV": WRITE_CSV,
+            "WRITE_JSONL": WRITE_JSONL,
+        },
+        "env": {
+            "python": platform.python_version(),
+            "platform": platform.platform(),
+            "timezone": time.tzname,
+        },
+        "ais_discovered": [],
+        "ais_excluded_mute": [],
+    }
+
+def _write_run_metadata(run_dir: pathlib.Path, meta: Dict[str, Any]):
+    with open(run_dir / "run_metadata.json", "w", encoding="utf-8") as fp:
+        json.dump(meta, fp, ensure_ascii=False, indent=2)
+
+def _ensure_out(run_dir: pathlib.Path, stamp: str):
+    """Crée writers vers fichiers horodatés dans le dossier de run."""
+    games_csv = run_dir / f"games_{stamp}.csv"
+    moves_csv = run_dir / f"moves_{stamp}.csv"
+    moves_jsonl = run_dir / f"moves_{stamp}.jsonl"
+    games_fp = open(games_csv, "w", newline="", encoding="utf-8") if WRITE_CSV else None
+    moves_fp = open(moves_csv, "w", newline="", encoding="utf-8") if WRITE_CSV else None
+    jsonl_fp = open(moves_jsonl, "w", encoding="utf-8") if WRITE_JSONL else None
+
+    csv_games_writer = None
+    csv_moves_writer = None
+    if games_fp:
+        csv_games_writer = csv.writer(games_fp)
+        csv_games_writer.writerow([
+            "game_uid","pair","starter","winner","end_reason","plies_total","opening",
+            "time_p1","time_p2","moves_p1","moves_p2",
+            "branch_sum_p1","branch_sum_p2","forced_p1","forced_p2",
+            "missed_win_p1","missed_win_p2","gave_opp_win_p1","gave_opp_win_p2"
+        ])
+    if moves_fp:
+        csv_moves_writer = csv.writer(moves_fp)
+        csv_moves_writer.writerow([
+            "game_uid","ply","player","r","c","shape","time_sec","legal_count",
+            "had_immediate_win","chose_immediate_win","gave_opp_immediate_win","is_center","note"
+        ])
+    return games_fp, moves_fp, jsonl_fp, csv_games_writer, csv_moves_writer
+
+def _close_out(games_fp, moves_fp, jsonl_fp):
+    for fp in (games_fp, moves_fp, jsonl_fp):
+        if fp:
+            fp.close()
 
 
 # ============= Moteur d’une partie (instrumenté coup-par-coup) =============
 def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
                   game_uid: str,
                   csv_games_writer, csv_moves_writer, jsonl_fp) -> Tuple[Player, Dict[str,Any]]:
-    """
-    Conventions :
-      • IA A = Player1, IA B = Player2
-      • `starter` ∈ {Player1, Player2} indique qui joue en premier
-    Retourne : (winner, log_dict) + écrit les logs CSV/JSONL si activés.
-    """
+    """Retourne : (winner, log_dict) + écrit les logs CSV/JSONL si activés."""
     if seed is not None:
         random.seed(seed)
 
@@ -330,22 +363,17 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
         Player.PLAYER1: {s: 2 for s in Shape},
         Player.PLAYER2: {s: 2 for s in Shape},
     }
-    aiA = aiA_cls(Player.PLAYER1)
-    aiB = aiB_cls(Player.PLAYER2)
-    # N’imposer le temps que si TIME_PER_MOVE est défini
-    set_time_budget(aiA, TIME_PER_MOVE)
-    set_time_budget(aiB, TIME_PER_MOVE)
+    aiA = aiA_cls(Player.PLAYER1); set_time_budget(aiA, TIME_PER_MOVE)
+    aiB = aiB_cls(Player.PLAYER2); set_time_budget(aiB, TIME_PER_MOVE)
 
     current = starter
     A_started = 1 if starter == Player.PLAYER1 else 0
 
-    # accumulateurs
     time_used = {Player.PLAYER1: 0.0, Player.PLAYER2: 0.0}
     moves_played = {Player.PLAYER1: 0,   Player.PLAYER2: 0}
     opening_moves: List[Tuple[int,int,Shape]] = []
     end_reason = "victory"
 
-    # stats de diagnostic
     legal_branch_sum = {Player.PLAYER1: 0, Player.PLAYER2: 0}
     forced_count = {Player.PLAYER1: 0, Player.PLAYER2: 0}
     had_win_but_missed = {Player.PLAYER1: 0, Player.PLAYER2: 0}
@@ -358,15 +386,12 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
         while True:
             ai = aiA if current == Player.PLAYER1 else aiB
 
-            # avant le coup : calcule les légaux et gains immédiats dispos
             legal_moves = generate_valid_moves(grid, current, pieces[current])
             legal_count = len(legal_moves)
             legal_branch_sum[current] += legal_count
 
             if legal_count == 0:
-                winner = other(current)
-                end_reason = "no_move"
-                break
+                winner = other(current); end_reason = "no_move"; break
             if legal_count == 1:
                 forced_count[current] += 1
 
@@ -398,8 +423,7 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
                     illegal_flag = True
 
             if illegal_flag:
-                winner = other(current)
-                end_reason = "illegal"
+                winner = other(current); end_reason = "illegal"
                 _write_move(csv_moves_writer, jsonl_fp, game_uid, ply_index,
                             current, None, dt, legal_count, had_immediate_win,
                             chose_win=0, gave_opp_win=0, center=0, note="illegal_or_none")
@@ -409,8 +433,7 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
             r, c, sh = move
             ok_place = board.place_piece(r, c, Piece(sh, current))
             if not ok_place:
-                winner = other(current)
-                end_reason = "illegal"
+                winner = other(current); end_reason = "illegal"
                 _write_move(csv_moves_writer, jsonl_fp, game_uid, ply_index,
                             current, (r,c,sh), dt, legal_count, had_immediate_win,
                             chose_win=0, gave_opp_win=0, center=int((r,c) in CENTER),
@@ -452,20 +475,14 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
                         chose_win=chose_win_now, gave_opp_win=gave_win,
                         center=int((r,c) in CENTER), note="ok")
 
-            # victoire ?
             if board.check_victory():
-                winner = current
-                end_reason = "victory"
-                break
+                winner = current; end_reason = "victory"; break
 
-            # coup suivant
             ply_index += 1
             current = other(current)
 
     except Exception as e:
-        # toute exception côté IA → l’autre gagne
-        winner = other(current)
-        end_reason = "exception"
+        winner = other(current); end_reason = "exception"
         _write_move(csv_moves_writer, jsonl_fp, game_uid, ply_index,
                     current, None, 0.0, 0, 0, 0, 0, 0, note=f"exception:{type(e).__name__}")
 
@@ -500,51 +517,16 @@ def play_one_game(aiA_cls, aiB_cls, starter: Player, seed: Optional[int],
         "missed_winB": had_win_but_missed[Player.PLAYER2],
         "gave_winA": gave_opp_immediate_win[Player.PLAYER1],
         "gave_winB": gave_opp_immediate_win[Player.PLAYER2],
-        # nb de tours (pour moyenne de branche correcte)
         "turnsA": moves_played[Player.PLAYER1],
         "turnsB": moves_played[Player.PLAYER2],
-        # pour bootstrap / Glicko
         "bin_outcome": 1 if winner == Player.PLAYER1 else 0,
     }
 
 
 # ===== Écriture des logs (CSV / JSONL) =====
-def _ensure_out():
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    games_csv = OUT_DIR / "games.csv"
-    moves_csv = OUT_DIR / "moves.csv"
-    moves_jsonl = OUT_DIR / "moves.jsonl"
-    games_fp = open(games_csv, "w", newline="", encoding="utf-8") if WRITE_CSV else None
-    moves_fp = open(moves_csv, "w", newline="", encoding="utf-8") if WRITE_CSV else None
-    jsonl_fp = open(moves_jsonl, "w", encoding="utf-8") if WRITE_JSONL else None
-
-    csv_games_writer = None
-    csv_moves_writer = None
-    if games_fp:
-        csv_games_writer = csv.writer(games_fp)
-        csv_games_writer.writerow([
-            "game_uid","pair","starter","winner","end_reason","plies_total","opening",
-            "time_p1","time_p2","moves_p1","moves_p2",
-            "branch_sum_p1","branch_sum_p2","forced_p1","forced_p2",
-            "missed_win_p1","missed_win_p2","gave_opp_win_p1","gave_opp_win_p2"
-        ])
-    if moves_fp:
-        csv_moves_writer = csv.writer(moves_fp)
-        csv_moves_writer.writerow([
-            "game_uid","ply","player","r","c","shape","time_sec","legal_count",
-            "had_immediate_win","chose_immediate_win","gave_opp_immediate_win","is_center","note"
-        ])
-    return games_fp, moves_fp, jsonl_fp, csv_games_writer, csv_moves_writer
-
-def _close_out(games_fp, moves_fp, jsonl_fp):
-    for fp in (games_fp, moves_fp, jsonl_fp):
-        if fp:
-            fp.close()
-
 def _write_game(csv_games_writer, game_uid, starter, winner, end_reason,
                 plies_total, opening_str, time_used, moves_played,
                 branch_sum, forced_count, missed_win, gave_opp):
-    """Ligne récap par partie (CSV)."""
     if not csv_games_writer:
         return
     csv_games_writer.writerow([
@@ -563,7 +545,6 @@ def _write_game(csv_games_writer, game_uid, starter, winner, end_reason,
 
 def _write_move(csv_moves_writer, jsonl_fp, game_uid, ply_index, player, mv, tsec,
                 legal_count, had_win, chose_win, gave_opp_win, center, note="ok"):
-    """Ligne par coup (CSV + JSONL)."""
     r = c = None
     sh_name = None
     if mv:
@@ -602,14 +583,12 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
     A_replies_won = 0
     t0_pair = time.time()
 
-    # cumul pair
     time_used_pair = {Aname: 0.0, Bname: 0.0}
     moves_pair = {Aname: 0, Bname: 0}
     game_lengths: List[int] = []
     end_reasons = Counter()
     opening_counter = Counter()
 
-    # métriques supplémentaires
     branch_sum_A = branch_sum_B = 0
     forced_A = forced_B = 0
     missed_win_A = missed_win_B = 0
@@ -617,7 +596,7 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
     turnsA_total = 0
     turnsB_total = 0
 
-    outcomes_bin = []   # pour bootstrap / Glicko (1 si A gagne, 0 sinon)
+    outcomes_bin = []
     sprt_decision = None
 
     for g in range(games_per_seed):
@@ -626,18 +605,16 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
                 break
             base = seed * 10_000 + 2*g
 
-            # A commence
+            # A start
             game_uid = f"{Aname}__vs__{Bname}__seed{base+1}__Astart"
             winner, log = play_one_game(iaA["cls"], iaB["cls"], starter=Player.PLAYER1,
                                         seed=base+1, game_uid=game_uid,
                                         csv_games_writer=csv_games_writer,
                                         csv_moves_writer=csv_moves_writer,
                                         jsonl_fp=jsonl_fp)
-
             time_used_pair[Aname] += log["timeA"]; time_used_pair[Bname] += log["timeB"]
             moves_pair[Aname] += log["movesA"];    moves_pair[Bname] += log["movesB"]
             outcomes_bin.append(log["bin_outcome"])
-
             game_lengths.append(log["plies_total"])
             end_reasons[log["end_reason"]] += 1
             opening_counter[log["opening"]] += 1
@@ -646,36 +623,25 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
             missed_win_A += log["missed_winA"]; missed_win_B += log["missed_winB"]
             gave_opp_A += log["gave_winA"]; gave_opp_B += log["gave_winB"]
             turnsA_total += log["turnsA"]; turnsB_total += log["turnsB"]
-
-            if winner == Player.PLAYER1:
-                wA += 1; A_starts_won += log["A_won_start"]; A_replies_won += log["A_won_reply"]
-            else:
-                wB += 1
-
+            if winner == Player.PLAYER1: wA += 1; A_starts_won += log["A_won_start"]; A_replies_won += log["A_won_reply"]
+            else: wB += 1
             if SHOW_PER_GAME_LINES:
-                print(f"  [{Aname} vs {Bname} | seed={base+1} | starter=A] "
-                      f"winner={'A' if winner==Player.PLAYER1 else 'B'} "
-                      f"len={log['plies_total']}, end={log['end_reason']}, "
-                      f"tA={log['timeA']:.2f}s, tB={log['timeB']:.2f}s, opening={log['opening']}")
-
-            # SPRT (peut arrêter le duel tôt)
+                print(f"  [{Aname} vs {Bname} | seed={base+1} | starter=A] winner={'A' if winner==Player.PLAYER1 else 'B'} "
+                      f"len={log['plies_total']}, end={log['end_reason']}, tA={log['timeA']:.2f}s, tB={log['timeB']:.2f}s, opening={log['opening']}")
             if USE_SPRT:
                 sprt_decision = sprt_update_decision(wA, wB, SPRT_P0, SPRT_P1, SPRT_ALPHA, SPRT_BETA)
-                if sprt_decision:
-                    break
+                if sprt_decision: break
 
-            # B commence
+            # B start
             game_uid = f"{Aname}__vs__{Bname}__seed{base+2}__Bstart"
             winner, log = play_one_game(iaA["cls"], iaB["cls"], starter=Player.PLAYER2,
                                         seed=base+2, game_uid=game_uid,
                                         csv_games_writer=csv_games_writer,
                                         csv_moves_writer=csv_moves_writer,
                                         jsonl_fp=jsonl_fp)
-
             time_used_pair[Aname] += log["timeA"]; time_used_pair[Bname] += log["timeB"]
             moves_pair[Aname] += log["movesA"];    moves_pair[Bname] += log["movesB"]
             outcomes_bin.append(log["bin_outcome"])
-
             game_lengths.append(log["plies_total"])
             end_reasons[log["end_reason"]] += 1
             opening_counter[log["opening"]] += 1
@@ -684,22 +650,14 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
             missed_win_A += log["missed_winA"]; missed_win_B += log["missed_winB"]
             gave_opp_A += log["gave_winA"]; gave_opp_B += log["gave_winB"]
             turnsA_total += log["turnsA"]; turnsB_total += log["turnsB"]
-
-            if winner == Player.PLAYER1:
-                wA += 1; A_starts_won += log["A_won_start"]; A_replies_won += log["A_won_reply"]
-            else:
-                wB += 1
-
+            if winner == Player.PLAYER1: wA += 1; A_starts_won += log["A_won_start"]; A_replies_won += log["A_won_reply"]
+            else: wB += 1
             if SHOW_PER_GAME_LINES:
-                print(f"  [{Aname} vs {Bname} | seed={base+2} | starter=B] "
-                      f"winner={'A' if winner==Player.PLAYER1 else 'B'} "
-                      f"len={log['plies_total']}, end={log['end_reason']}, "
-                      f"tA={log['timeA']:.2f}s, tB={log['timeB']:.2f}s, opening={log['opening']}")
-
+                print(f"  [{Aname} vs {Bname} | seed={base+2} | starter=B] winner={'A' if winner==Player.PLAYER1 else 'B'} "
+                      f"len={log['plies_total']}, end={log['end_reason']}, tA={log['timeA']:.2f}s, tB={log['timeB']:.2f}s, opening={log['opening']}")
             if USE_SPRT:
                 sprt_decision = sprt_update_decision(wA, wB, SPRT_P0, SPRT_P1, SPRT_ALPHA, SPRT_BETA)
-                if sprt_decision:
-                    break
+                if sprt_decision: break
 
     elapsed_pair = time.time() - t0_pair
     games = wA + wB
@@ -710,12 +668,8 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
         blo, bhi = bootstrap_ci_wins(outcomes_bin, BOOTSTRAP_N)
 
     avg_len = sum(game_lengths)/len(game_lengths) if game_lengths else 0.0
-
-    # moyenne de branche par TOUR (et non par partie) — correctif
     avg_branch_A = (branch_sum_A / max(1, turnsA_total))
     avg_branch_B = (branch_sum_B / max(1, turnsB_total))
-
-    # qualité/coût : temps moyen par coup + taux d’erreurs / 100 coups
     tpmA = time_used_pair[Aname] / max(1, moves_pair[Aname])
     tpmB = time_used_pair[Bname] / max(1, moves_pair[Bname])
     miss_per100_A = 100.0 * missed_win_A / max(1, moves_pair[Aname])
@@ -755,7 +709,6 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
         "tpm_A": tpmA, "tpm_B": tpmB,
         "missA": miss_per100_A, "missB": miss_per100_B,
         "gaveA": gave_per100_A, "gaveB": gave_per100_B,
-        # pour Glicko / bootstrap global
         "outcomes": outcomes_bin,
     }
 
@@ -764,11 +717,9 @@ def run_pair_diagnostic(iaA: Dict, iaB: Dict, seeds: List[int], games_per_seed: 
 def aggregate(results: List[Dict]):
     totals: Dict[str, Dict[str, float]] = defaultdict(lambda: defaultdict(float))
 
-    # Prépare structures Glicko si activé
     glicko_r: Dict[str, float]  = {}
     glicko_rd: Dict[str, float] = {}
     if USE_GLICKO:
-        # init pour tous les noms rencontrés
         names = set()
         for r in results:
             names.add(r["A"]); names.add(r["B"])
@@ -778,10 +729,8 @@ def aggregate(results: List[Dict]):
 
     for r in results:
         A, B = r["A"], r["B"]
-        # win/loss cumulés
         totals[A]["wins"]  += r["wA"]; totals[A]["losses"] += r["wB"]
         totals[B]["wins"]  += r["wB"]; totals[B]["losses"] += r["wA"]
-        # temps et métriques qualité/coût (pondérés par nb de parties du duel)
         g = max(1, r["games"])
         totals[A]["games"] += g; totals[B]["games"] += g
         totals[A]["time_used"] += r["time_A_pair"]; totals[B]["time_used"] += r["time_B_pair"]
@@ -789,7 +738,6 @@ def aggregate(results: List[Dict]):
         totals[A]["miss_sum"] += r["missA"] * g;    totals[B]["miss_sum"] += r["missB"] * g
         totals[A]["gave_sum"] += r["gaveA"] * g;    totals[B]["gave_sum"] += r["gaveB"] * g
 
-        # MàJ Glicko par PARTIE (séquentiel)
         if USE_GLICKO and r.get("outcomes"):
             for sA in r["outcomes"]:
                 rA, rdA = glicko_r[A], glicko_rd[A]
@@ -799,7 +747,6 @@ def aggregate(results: List[Dict]):
                 glicko_r[B], glicko_rd[B] = rB2, rdB2
 
     print("\n=== Résumé agrégé par IA (winrate cumulé) ===")
-    lines = []
     for name, t in totals.items():
         w, l = int(t["wins"]), int(t["losses"])
         g = w + l
@@ -810,7 +757,6 @@ def aggregate(results: List[Dict]):
         gave = (t["gave_sum"]/t["games"]) if t["games"] else 0.0
         print(f"{name:28s} {w:4d}-{l:<4d}  WR={wr:.3f}  (95% CI {lo:.3f}-{hi:.3f})  | "
               f"t/c={tpm:.3f}s  |  miss/100={miss:.2f}  |  gave/100={gave:.2f}")
-        lines.append((name, wr, tpm, miss, gave))
 
     # Elo approximatif (un seul passage)
     elo = {name: 1000.0 for name in totals.keys()}
@@ -826,8 +772,10 @@ def aggregate(results: List[Dict]):
 
     if USE_GLICKO:
         print("\n=== Classement Glicko-1 (r ± RD) ===")
-        for name in sorted(glicko_r.keys(), key=lambda n: glicko_r[n], reverse=True):
-            print(f"{name:28s} r={glicko_r[name]:7.1f} ± {glicko_rd[name]:.1f}")
+        for name in sorted( (k for k in elo.keys()), key=lambda n: (glicko_r.get(n,0.0)), reverse=True):
+            r = glicko_r.get(name, GLICKO_START_RATING)
+            rd = glicko_rd.get(name, GLICKO_START_RD)
+            print(f"{name:28s} r={r:7.1f} ± {rd:.1f}")
 
     # Matrice A × B
     names = sorted(totals.keys())
@@ -849,21 +797,29 @@ def aggregate(results: List[Dict]):
 
 # ===================== Main ======================
 def main():
-    # préparation de la sortie
-    if WRITE_CSV or WRITE_JSONL:
-        OUT_DIR.mkdir(parents=True, exist_ok=True)
-    games_fp, moves_fp, jsonl_fp, csv_games_writer, csv_moves_writer = _ensure_out()
+    # Prépare dossier horodaté + metadata initiale
+    stamp, run_dir = _prepare_run_dir()
+    meta = _initial_metadata(stamp, run_dir)
+    print(f"📦 Run folder: {run_dir}")
 
-    # découverte IAs
+    # Fichiers de sortie
+    games_fp, moves_fp, jsonl_fp, csv_games_writer, csv_moves_writer = _ensure_out(run_dir, stamp)
+
+    # Découverte IAs
     ais, errors = discover_ais()
     ais, mute_excluded = filter_mute_ais(ais, do_filter=FILTER_MUTE)
-    print(f"IAs découvertes ({len(ais)}): {[a['name'] for a in ais]}")
+    meta["ais_discovered"] = [a["name"] for a in ais]
+    meta["ais_excluded_mute"] = mute_excluded
+    if errors: meta["import_errors"] = errors
+    _write_run_metadata(run_dir, meta)
+
+    print(f"IAs découvertes ({len(ais)}): {meta['ais_discovered']}")
     if errors:
         print(f"⚠️  Erreurs d’import: {errors}")
     if FILTER_MUTE and mute_excluded:
         print(f"⚠️  Exclues (muettes au probe): {mute_excluded}")
 
-    # round-robin (toutes les paires A<B)
+    # Round-robin (toutes les paires A<B)
     results = []
     for i in range(len(ais)):
         for j in range(i+1, len(ais)):
@@ -876,12 +832,16 @@ def main():
             )
             results.append(r)
 
-    # fermeture fichiers
+    # Ferme fichiers
     _close_out(games_fp, moves_fp, jsonl_fp)
 
-    # agrégat final
+    # Agrégat final (impressions console)
     aggregate(results)
 
+    # Optionnel : snapshot minimal des résultats pour metadata
+    meta["pairs_run"] = len(results)
+    meta["total_games"] = int(sum(r["games"] for r in results))
+    _write_run_metadata(run_dir, meta)  # rewrite avec infos finais
 
 if __name__ == "__main__":
     main()
