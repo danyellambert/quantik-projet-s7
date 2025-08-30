@@ -1,9 +1,18 @@
 # gui/app.py
 # ---------------------------------------------------------------------
-# Interface PyQt5 – visual du “vieil” app + configuration sur l’écran
+# Interface PyQt5 – visuel du “vieil” app + configuration à l’écran
 # Découverte d’IA (ai_players/*/algorithme.py)
 # Modes: Humain vs Humain, Humain vs IA, IA vs IA (sélection dans l’UI)
-# Barre de défilement: panneau de gauche scrollable (vertical)
+# Colonne de gauche scrollable (QScrollArea)
+#
+# Correctifs majeurs (threads IA) :
+#  • Un seul thread IA à la fois, créé avec parent=QuantikGame
+#  • Copie SNAPSHOT (plateau + stocks) passée au thread (pas de partage d’état)
+#  • Deux signaux reçus : move_calculated(...) et finished()
+#    -> On n’enchaîne le tour suivant qu’après AVOIR appliqué le coup ET
+#       après FIN DU THREAD (gestion d’ordre non déterministe des signaux)
+#  • Nettoyage systématique : deleteLater(), mise à None
+#  • À la fermeture / “Nouvelle partie” : arrêt propre (terminate + wait) si besoin
 # ---------------------------------------------------------------------
 
 import sys, time, importlib, pkgutil, pathlib
@@ -42,27 +51,43 @@ def discover_ais():
     return ais
 
 
+# =========================
+# Thread IA (calcul asynchrone)
+# =========================
 class AIThinkingWorker(QThread):
-    """Thread pour calculer le coup IA sans bloquer l’UI."""
+    """
+    Thread pour calculer le coup IA sans bloquer l’UI.
+
+    Points clés :
+      • On reçoit un SNAPSHOT (copie) du plateau et des stocks
+        -> l’IA travaille en lecture/écriture sur sa copie locale.
+      • move_calculated(tuple) émis AVANT la fin du run().
+      • finished() émis automatiquement par QThread après la fin de run().
+    """
     move_calculated = pyqtSignal(tuple)  # (row, col, shape) ou (-1,-1,None)
 
-    def __init__(self, ai, board, pieces_count):
-        super().__init__()
+    def __init__(self, parent, ai, board_snapshot, pieces_snapshot, thinking_delay_s: float = 0.30):
+        super().__init__(parent)
         self.ai = ai
-        self.board = board
-        self.pieces_count = pieces_count
+        self.board_snapshot = board_snapshot
+        self.pieces_snapshot = pieces_snapshot
+        self.thinking_delay_s = thinking_delay_s
 
     def run(self):
         try:
-            time.sleep(1.0)  # petit délai pour l’effet “réflexion”
-            move = self.ai.get_move(self.board, self.pieces_count)
+            # Petit délai pour “effet réflexion” sans bloquer l’UI
+            if self.thinking_delay_s > 0:
+                time.sleep(self.thinking_delay_s)
+
+            move = self.ai.get_move(self.board_snapshot, self.pieces_snapshot)
             if move:
                 self.move_calculated.emit(move)
             else:
                 self.move_calculated.emit((-1, -1, None))
         except Exception as e:
-            print(f"Erreur IA: {e}")
+            print(f"[IA THREAD] Erreur IA: {e}")
             self.move_calculated.emit((-1, -1, None))
+        # À la sortie de run(), le signal finished() sera automatiquement émis.
 
 
 class QuantikGame(QMainWindow):
@@ -100,7 +125,11 @@ class QuantikGame(QMainWindow):
         # Instances d’IA (None = humain)
         self.ai_p1 = None
         self.ai_p2 = None
-        self.ai_worker = None
+
+        # Thread IA courant + flags d’enchaînement
+        self.ai_worker: Optional[AIThinkingWorker] = None
+        self._flag_move_applied = False       # vrai quand le coup reçu a été appliqué
+        self._flag_worker_finished = False    # vrai quand le thread a fini (finished())
 
         # UI
         self.init_ui()
@@ -148,11 +177,11 @@ class QuantikGame(QMainWindow):
 
         # QScrollArea enveloppant le panneau gauche (scroll vertical)
         left_scroll = QScrollArea()
-        left_scroll.setWidgetResizable(True)                 # le contenu s’adapte en largeur
-        left_scroll.setFrameShape(QFrame.NoFrame)            # sans bordure
+        left_scroll.setWidgetResizable(True)
+        left_scroll.setFrameShape(QFrame.NoFrame)
         left_scroll.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         left_scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        left_scroll.setWidget(left_panel_widget)             # le widget réel du panneau
+        left_scroll.setWidget(left_panel_widget)
 
         # Panneau droit (plateau)
         right_panel = self.create_board_panel()
@@ -349,7 +378,7 @@ class QuantikGame(QMainWindow):
         layout.addWidget(group)
 
     def create_ai_section(self, layout, player):
-        """Même visuel; activable si Joueur 2 est humain (sinon, affichage)."""
+        """Même visuel; affichage (boutons désactivés) si côté IA."""
         colors = self.player_colors[player]
         group = QGroupBox(colors['name'])
         group.setStyleSheet(f"""
@@ -510,10 +539,30 @@ class QuantikGame(QMainWindow):
                 "adversaire a déjà cette même forme."
             )
 
+    # --- aide : snapshot état pour thread ---
+    def _snapshot_state(self):
+        """Crée des copies (plateau + stocks) à passer au thread IA."""
+        board_copy = [row.copy() for row in self.board.board]
+        counts_copy = {
+            Player.PLAYER1: dict(self.pieces_count[Player.PLAYER1]),
+            Player.PLAYER2: dict(self.pieces_count[Player.PLAYER2]),
+        }
+        return board_copy, counts_copy
+
     def _maybe_auto_play(self):
+        """
+        Lance le thread IA si le côté courant est une IA.
+        Sécurité :
+          • pas de second thread s’il y en a déjà un en cours
+          • on réinitialise les flags d’enchaînement pour ce “tour IA”
+        """
         ai_curr = self._current_ai()
         if ai_curr is None or not self.game_enabled:
             return
+        if self.ai_worker is not None and self.ai_worker.isRunning():
+            # Défensif : ne pas lancer un 2ᵉ thread par mégarde
+            return
+
         self.game_enabled = False
         self.ai_status_label.setText("🤖 IA réfléchit...")
         self.ai_status_label.setStyleSheet("""
@@ -523,14 +572,28 @@ class QuantikGame(QMainWindow):
                 padding: 8px; border-radius: 6px; margin: 5px 0;
             }
         """)
-        self.ai_worker = AIThinkingWorker(ai_curr, self.board.board, self.pieces_count)
-        self.ai_worker.move_calculated.connect(self._execute_ai_move)
+
+        board_copy, counts_copy = self._snapshot_state()
+
+        # (re)initialisation des flags d’ordre de signaux
+        self._flag_move_applied = False
+        self._flag_worker_finished = False
+
+        # Thread avec parent=self (Qt gère la durée de vie, mais on nettoie quand même)
+        self.ai_worker = AIThinkingWorker(self, ai_curr, board_copy, counts_copy, thinking_delay_s=0.30)
+        self.ai_worker.move_calculated.connect(self._on_ai_move_calculated)
+        self.ai_worker.finished.connect(self._on_ai_finished)
         self.ai_worker.start()
 
-    def _execute_ai_move(self, move):
+    def _on_ai_move_calculated(self, move):
+        """
+        Slot appelé quand le THREAD émet le coup (peut arriver AVANT OU APRÈS finished()).
+        On applique le coup, puis on marque le flag et on tente un enchaînement propre.
+        """
         if move is None or move == (-1, -1, None) or move[0] == -1:
             print("IA n'a pas trouvé de coup valide")
             self.show_no_moves()
+            # Si le thread n’est pas encore “finished”, _on_ai_finished fera juste le nettoyage.
             return
 
         row, col, shape = move
@@ -550,23 +613,55 @@ class QuantikGame(QMainWindow):
                         padding: 8px; border-radius: 6px; margin: 5px 0;
                     }
                 """)
+                # Attendre la fin du thread pour nettoyage (pas d’enchaînement)
                 QTimer.singleShot(200, lambda: self.show_victory(self.current_player))
-                return
+            else:
+                # Passer la main
+                self.current_player = Player.PLAYER2 if self.current_player == Player.PLAYER1 else Player.PLAYER1
+                self.game_enabled = True
+                self.ai_status_label.setText("")
+                self.update_display()
 
-            self.current_player = Player.PLAYER2 if self.current_player == Player.PLAYER1 else Player.PLAYER1
-            self.game_enabled = True
-            self.ai_status_label.setText("")
-
-            if not self.board.has_valid_moves(self.current_player):
-                self.show_no_moves()
-                return
-
-            self.update_display()
-            self._maybe_auto_play()  # IA vs IA: enchaîne
+            # Marquer “coup appliqué”
+            self._flag_move_applied = True
+            # Tentative d’enchaînement (ne démarrera que si finished() a déjà été reçu)
+            self._try_chain_after_worker()
         else:
             print("Erreur: Coup IA invalide!")
             self.game_enabled = True
             self.ai_status_label.setText("❌ Erreur IA")
+            # Marque comme appliqué pour permettre le cleanup/enchaînement correct
+            self._flag_move_applied = True
+            self._try_chain_after_worker()
+
+    def _on_ai_finished(self):
+        """
+        Slot appelé quand le THREAD est réellement terminé.
+        On marque le flag et on tente l’enchaînement si le coup est déjà appliqué.
+        """
+        self._flag_worker_finished = True
+        self._try_chain_after_worker()
+
+    def _try_chain_after_worker(self):
+        """
+        N’ENCHAÎNE le tour suivant (IA vs IA) que si :
+          • le coup IA a été appliqué (flag_move_applied)
+          • ET le thread est terminé (flag_worker_finished)
+        Ceci évite le message : "QThread: Destroyed while thread is still running".
+        """
+        if not (self._flag_move_applied and self._flag_worker_finished):
+            return
+
+        # Nettoyage sûr du thread courant
+        if self.ai_worker is not None:
+            # deleteLater pour s’aligner sur le cycle Qt
+            self.ai_worker.deleteLater()
+            self.ai_worker = None
+
+        # Si partie non finie et côté suivant est IA, on relance
+        if self.game_enabled and self._current_ai() is not None:
+            # Petit délai pour laisser l’UI respirer entre coups IA
+            QTimer.singleShot(0, self._maybe_auto_play)
 
     def update_display(self):
         # Plateau
@@ -740,9 +835,17 @@ class QuantikGame(QMainWindow):
 
     # ====== Nouvelle partie / Reset ======
     def new_game(self):
+        """
+        Réinitialise l’état de la partie.
+        Arrête proprement un thread IA éventuel AVANT de recréer une partie.
+        """
         if self.ai_worker and self.ai_worker.isRunning():
+            # En dernier recours : terminate() + wait() (l’IA peut être dans un calcul bloquant)
             self.ai_worker.terminate()
             self.ai_worker.wait()
+        if self.ai_worker:
+            self.ai_worker.deleteLater()
+            self.ai_worker = None
 
         self.board = QuantikBoard()
         self.current_player = Player.PLAYER1
@@ -754,6 +857,8 @@ class QuantikGame(QMainWindow):
         }
         self.move_history = []
         self.ai_status_label.setText("")
+        self._flag_move_applied = False
+        self._flag_worker_finished = False
 
         sel1 = self.available_ais[self.cb_p1.currentIndex()]
         sel2 = self.available_ais[self.cb_p2.currentIndex()]
@@ -765,9 +870,16 @@ class QuantikGame(QMainWindow):
         self._maybe_auto_play()
 
     def closeEvent(self, event):
+        """
+        À la fermeture de la fenêtre :
+          • on s’assure de stopper/nettoyer le thread IA courant
+        """
         if self.ai_worker and self.ai_worker.isRunning():
             self.ai_worker.terminate()
             self.ai_worker.wait()
+        if self.ai_worker:
+            self.ai_worker.deleteLater()
+            self.ai_worker = None
         event.accept()
 
 
