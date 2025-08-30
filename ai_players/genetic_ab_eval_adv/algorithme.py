@@ -1,4 +1,4 @@
-# ai_players/genetic_ab_eval+/algorithme.py
+# ai_players/genetic_ab_eval+/algorithme.py 
 # ======================================================================
 # IA "Génétique (éval AB)" – version avec limite de temps RIGIDE par coup
 # ----------------------------------------------------------------------
