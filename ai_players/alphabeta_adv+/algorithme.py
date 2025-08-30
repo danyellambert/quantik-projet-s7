@@ -1,13 +1,13 @@
 # ai_players/alphabeta_plus/algorithme.py
 # ================================================================
-# IA Quantik “AlphaBeta++” (melhorada)
-# - Minimax com poda alpha–beta
-# - Iterative deepening + aspiration windows
-# - Ordenação forte: PV/TT, win, block, killers, history, centro
-# - TT estável: (board, side, counts)
-# - Heurística tático-posicional (ameaças imediatas, mobilidade, centro)
-# - Extensão de ameaça (quiescence light) quando há mate-em-1
-# - Sentinelas finitas; sem mutação de estado global
+# IA Quantik « AlphaBeta++ » (améliorée)
+# - Minimax avec élagage alpha–bêta
+# - Approfondissement itératif + fenêtres d’aspiration
+# - Ordonnancement fort : PV/TT, gain, blocage, killers, history, centre
+# - TT stable : (plateau, camp, comptes de pièces)
+# - Heuristique tactico-positionnelle (menaces immédiates, mobilité, centre)
+# - Extension de menace (quiescence légère) quand il y a victoire en un coup
+# - Bornes sentinelles ; pas de mutation d’état global
 # ================================================================
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ from core.types import Shape, Player, Piece
 AI_NAME = "AlphaBeta++"
 AI_AUTHOR = ""
 
-# --- Constantes de tabuleiro ---
+# --- Constantes du plateau ---
 N = 4
 ALL_CELLS = [(r, c) for r in range(N) for c in range(N)]
 ZONES = [
@@ -35,19 +35,19 @@ LINES.extend(ZONES)
 
 CENTER_CELLS = {(1,1), (1,2), (2,1), (2,2)}
 
-# --- Sentinelas finitas ---
+# --- Bornes sentinelles ---
 WIN_SCORE   = 50_000.0
 LOSS_SCORE  = -WIN_SCORE
 ALPHA_INIT  = -1_000_000.0
 BETA_INIT   = +1_000_000.0
 
-# --- Pesos heurísticos ---
-W_THREAT = 5000.0   # ameaças imediatas (muito alto para tática)
+# --- Poids heuristiques ---
+W_THREAT = 5000.0   # menaces immédiates (poids très élevé pour la tactique)
 W_MOB    = 2.0
 W_CENTER = 1.0
 
 # =========================
-# Regras/utilitários Quantik
+# Règles / utilitaires Quantik
 # =========================
 def zone_index(r: int, c: int) -> int:
     if r < 2 and c < 2:  return 0
@@ -59,19 +59,19 @@ def is_valid_move(board: List[List[Optional[Piece]]],
                   row: int, col: int,
                   shape: Shape, me: Player) -> bool:
     """
-    Legal se a casa está vazia E o ADVERSÁRIO não tem a mesma forma
-    na mesma linha/coluna/zona (regra de Quantik usada no projeto).
+    Coup légal si la case est vide ET si l’ADVERSAIRE n’a pas la même forme
+    sur la même ligne/colonne/zone (règle de Quantik utilisée dans ce projet).
     """
     if board[row][col] is not None: return False
-    # linha
+    # ligne
     for c in range(N):
         p = board[row][c]
         if p is not None and p.shape == shape and p.player != me: return False
-    # coluna
+    # colonne
     for r in range(N):
         p = board[r][col]
         if p is not None and p.shape == shape and p.player != me: return False
-    # zona
+    # zone
     z = zone_index(row, col)
     for (rr, cc) in ZONES[z]:
         p = board[rr][cc]
@@ -100,10 +100,10 @@ def generate_valid_moves(board, me: Player, my_counts: Dict[Shape, int]) -> List
     return moves
 
 # =========================
-# Heurística: tática + posição
+# Heuristique : tactique + position
 # =========================
 def count_immediate_wins(board, counts, who: Player) -> int:
-    """Quantos mates-em-1 `who` possui aqui."""
+    """Nombre de victoires en un coup dont dispose `who` dans cette position."""
     n = 0
     moves = generate_valid_moves(board, who, counts[who])
     for (r, c, sh) in moves:
@@ -127,13 +127,13 @@ def heuristic(board, me: Player, counts) -> float:
     opp = Player.PLAYER1 if me == Player.PLAYER2 else Player.PLAYER2
     my_th  = count_immediate_wins(board, counts, me)
     opp_th = count_immediate_wins(board, counts, opp)
-    # Nota: ameaças têm peso altíssimo; demais termos refinam
+    # NB : les menaces sont très fortement pondérées ; les autres termes affinent l’évaluation
     mob    = mobility(board, me, counts) - mobility(board, opp, counts)
     center = center_control(board, me)
     return W_THREAT*(my_th - opp_th) + W_MOB*mob + W_CENTER*center
 
 # =========================
-# Busca Alpha–Beta com deepening
+# Recherche Alpha–Bêta avec approfondissement
 # =========================
 class Searcher:
     def __init__(self, me: Player, time_limit: float = 1.35):
@@ -141,17 +141,17 @@ class Searcher:
         self.opp = Player.PLAYER1 if me == Player.PLAYER2 else Player.PLAYER2
         self.time_limit = time_limit
         self.t0 = 0.0
-        # TT: key -> (depth, score, best_move)
+        # TT : clé -> (profondeur, score, meilleur_coup)
         self.tt: Dict[Any, Tuple[int, float, Optional[Tuple[int,int,Shape]]]] = {}
-        # history heuristic e killers
+        # heuristique d’historique et coups killers
         self.history: Dict[Tuple[int,int,Shape], int] = {}
         self.killers: Dict[int, List[Tuple[int,int,Shape]]] = {}
 
-    # ---- tempo ----
+    # ---- gestion du temps ----
     def time_up(self) -> bool:
         return (time.time() - self.t0) >= self.time_limit
 
-    # ---- chave TT estável (inclui counts) ----
+    # ---- clé TT stable (inclut les comptes de pièces) ----
     def counts_key(self, counts: Dict[Player, Dict[Shape,int]]) -> Tuple[Tuple[int,...], Tuple[int,...]]:
         p1 = tuple(counts[Player.PLAYER1].get(sh, 0) for sh in Shape)
         p2 = tuple(counts[Player.PLAYER2].get(sh, 0) for sh in Shape)
@@ -165,8 +165,9 @@ class Searcher:
                 cells.append(None if p is None else (p.shape.value, p.player.value))
         return (tuple(cells), side.value, self.counts_key(counts))
 
-    # ---- utilitários táticos ----
+    # ---- utilitaires tactiques ----
     def has_immediate_win(self, board, counts, side: Player) -> Optional[Tuple[int,int,Shape]]:
+        """Renvoie un coup gagnant immédiat pour `side` s’il existe, sinon None."""
         for (r, c, sh) in generate_valid_moves(board, side, counts[side]):
             board[r][c] = Piece(sh, side)
             if check_victory_after(board, r, c):
@@ -176,14 +177,12 @@ class Searcher:
         return None
 
     def blocks_opponent_win(self, board, counts, side: Player, mv: Tuple[int,int,Shape]) -> int:
-        """Retorna 1 se jogar mv impede uma vitória imediata do oponente."""
+        """Renvoie 1 si jouer `mv` empêche une victoire immédiate de l’adversaire, sinon 0."""
         opp = self.opp if side == self.me else self.me
         r, c, sh = mv
-        # se ao colocar minha peça aqui, aquela casa não fica livre pro adv ganhar, conta.
-        # ou se eu usar a mesma forma que daria a vitória do adversário e a torne ilegal.
-        # Teste focado: existia vitória do adv na mesma casa?
-        # Procuramos todas as vitórias do adv e vemos se este mv as anula.
-        # (otimização leve: testar apenas a própria célula)
+        # Idée : s’il existait une victoire adverse en (r,c), occuper cette case la bloque.
+        # On teste si l’adversaire pourrait gagner en (r,c) avec une forme encore disponible ;
+        # si oui, jouer `mv` en (r,c) neutralise cette menace.
         for sh2 in Shape:
             if counts[opp].get(sh2, 0) <= 0: continue
             if not is_valid_move(board, r, c, sh2, opp): continue
@@ -191,16 +190,15 @@ class Searcher:
             win = check_victory_after(board, r, c)
             board[r][c] = None
             if win:
-                # Se eu jogo mv na mesma (r,c), bloqueio
                 return 1 if (mv[0] == r and mv[1] == c) else 0
         return 0
 
-    # ---- ordenação de lances ----
+    # ---- ordonnancement des coups ----
     def order_moves(self, board, counts, side: Player, moves, depth: int) -> List[Tuple[int,int,Shape]]:
         scored = []
         opp = self.opp if side == self.me else self.me
 
-        # PV/TT primeiro, se existir
+        # PV/TT en premier, si disponible
         tt_move = None
         key = self.board_key(board, side, counts)
         if key in self.tt and self.tt[key][2] is not None:
@@ -210,12 +208,12 @@ class Searcher:
 
         for mv in moves:
             r, c, sh = mv
-            # vitória imediata?
+            # victoire immédiate ?
             board[r][c] = Piece(sh, side)
             win = check_victory_after(board, r, c)
             board[r][c] = None
 
-            # bloqueio válido (como no AB+)
+            # blocage valide (comme dans AB+)
             block = 0
             for sh2 in Shape:
                 if counts[opp].get(sh2, 0) <= 0: continue
@@ -238,14 +236,14 @@ class Searcher:
         scored.sort(key=lambda x: x[0], reverse=True)
         return [m for _, m in scored]
 
-    # ---- busca ----
+    # ---- recherche ----
     def search(self, board, counts, side: Player, depth: int,
                alpha: float, beta: float, ply: int) -> Tuple[float, Optional[Tuple[int,int,Shape]]]:
         if self.time_up():
             return heuristic(board, self.me, counts), None
 
-        # Extensão de ameaça (quiescence light)
-        # se qualquer lado tem mate-em-1 aqui, estende uma plie a mais
+        # Extension de menace (quiescence légère)
+        # si un camp a une victoire en un coup ici, on étend d’un pli
         ext = 0
         if depth > 0:
             if self.has_immediate_win(board, counts, side) is not None: ext = 1
@@ -261,7 +259,7 @@ class Searcher:
         if not moves:
             return (LOSS_SCORE if side == self.me else WIN_SCORE), None
 
-        # Vitória imediata: atalho também para TT
+        # Victoire immédiate : raccourci + écriture TT
         for (r, c, sh) in moves:
             board[r][c] = Piece(sh, side)
             if check_victory_after(board, r, c):
@@ -296,7 +294,7 @@ class Searcher:
                 if value > alpha:
                     alpha = value
                 if alpha >= beta:
-                    # beta-cutoff: killers + history
+                    # coupure bêta : enregistre killers + history
                     ks = self.killers.setdefault(ply, [])
                     if mv not in ks:
                         if len(ks) < 2: ks.append(mv)
@@ -334,7 +332,7 @@ class Searcher:
             self.tt[key] = (depth, value, best_move)
             return value, best_move
 
-    # ---- deepening com aspiration windows ----
+    # ---- approfondissement avec fenêtres d’aspiration ----
     def choose(self, board, counts) -> Optional[Tuple[int,int,Shape]]:
         self.t0 = time.time()
         self.killers.clear()
@@ -342,11 +340,11 @@ class Searcher:
 
         best_move = None
         prev_score = 0.0
-        # profundidade alvo razoável para 4x4
+        # profondeur cible raisonnable pour un plateau 4x4
         for depth in range(2, 10):
             if self.time_up(): break
 
-            # janela de aspiração em torno do score anterior
+            # fenêtre d’aspiration autour du score précédent
             window = 250.0
             alpha = max(ALPHA_INIT, prev_score - window)
             beta  = min(BETA_INIT,  prev_score + window)
@@ -354,7 +352,7 @@ class Searcher:
             score, move = self.search(board, counts, self.me, depth, alpha, beta, ply=0)
             if self.time_up(): break
 
-            # falha da janela => re-buscar com janela cheia
+            # échec de fenêtre => relance avec fenêtre complète
             if score <= alpha:
                 score, move = self.search(board, counts, self.me, depth, ALPHA_INIT, BETA_INIT, ply=0)
             elif score >= beta:
@@ -372,12 +370,12 @@ class Searcher:
         return best_move
 
 # =========================
-# Classe exportada
+# Classe exportée
 # =========================
 class QuantikAI:
     def __init__(self, player: Player):
         self.me = player
-        self.time_limit = 1.25  # s / lance
+        self.time_limit = 1.25  # s / coup
 
     def get_move(self, board, pieces_count) -> Optional[Tuple[int,int,Shape]]:
         counts = {
