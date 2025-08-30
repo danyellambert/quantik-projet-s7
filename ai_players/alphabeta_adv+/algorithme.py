@@ -1,13 +1,13 @@
 # ai_players/alphabeta_plus/algorithme.py
 # ================================================================
-# IA Quantik « AlphaBeta++ » (améliorée)
+# IA Quantik “AlphaBeta++” (améliorée)
 # - Minimax avec élagage alpha–bêta
-# - Approfondissement itératif + fenêtres d’aspiration
-# - Ordonnancement fort : PV/TT, gain, blocage, killers, history, centre
-# - TT stable : (plateau, camp, comptes de pièces)
+# - Iterative deepening + fenêtres d’aspiration
+# - Ordonnancement fort : VP/TT, victoire, bloc, killers, historique, centre
+# - TT stable : (plateau, côté, comptes)
 # - Heuristique tactico-positionnelle (menaces immédiates, mobilité, centre)
-# - Extension de menace (quiescence légère) quand il y a victoire en un coup
-# - Bornes sentinelles ; pas de mutation d’état global
+# - Extension de menace (quiescence légère) lorsqu’il y a mat-en-1
+# - Sentinelles finies ; pas de mutation d’état global
 # ================================================================
 
 from __future__ import annotations
@@ -35,14 +35,14 @@ LINES.extend(ZONES)
 
 CENTER_CELLS = {(1,1), (1,2), (2,1), (2,2)}
 
-# --- Bornes sentinelles ---
+# --- Sentinelles finies ---
 WIN_SCORE   = 50_000.0
 LOSS_SCORE  = -WIN_SCORE
 ALPHA_INIT  = -1_000_000.0
 BETA_INIT   = +1_000_000.0
 
 # --- Poids heuristiques ---
-W_THREAT = 5000.0   # menaces immédiates (poids très élevé pour la tactique)
+W_THREAT = 5000.0   # menaces immédiates (très élevé pour la tactique)
 W_MOB    = 2.0
 W_CENTER = 1.0
 
@@ -59,8 +59,8 @@ def is_valid_move(board: List[List[Optional[Piece]]],
                   row: int, col: int,
                   shape: Shape, me: Player) -> bool:
     """
-    Coup légal si la case est vide ET si l’ADVERSAIRE n’a pas la même forme
-    sur la même ligne/colonne/zone (règle de Quantik utilisée dans ce projet).
+    Coup légal si la case est vide ET que l’ADVERSAIRE n’a pas la même forme
+    sur la même ligne/colonne/zone (règle de Quantik utilisée dans le projet).
     """
     if board[row][col] is not None: return False
     # ligne
@@ -103,7 +103,7 @@ def generate_valid_moves(board, me: Player, my_counts: Dict[Shape, int]) -> List
 # Heuristique : tactique + position
 # =========================
 def count_immediate_wins(board, counts, who: Player) -> int:
-    """Nombre de victoires en un coup dont dispose `who` dans cette position."""
+    """Combien de mats-en-1 `who` possède ici."""
     n = 0
     moves = generate_valid_moves(board, who, counts[who])
     for (r, c, sh) in moves:
@@ -127,7 +127,7 @@ def heuristic(board, me: Player, counts) -> float:
     opp = Player.PLAYER1 if me == Player.PLAYER2 else Player.PLAYER2
     my_th  = count_immediate_wins(board, counts, me)
     opp_th = count_immediate_wins(board, counts, opp)
-    # NB : les menaces sont très fortement pondérées ; les autres termes affinent l’évaluation
+    # Remarque : les menaces ont un poids très élevé ; les autres termes affinent
     mob    = mobility(board, me, counts) - mobility(board, opp, counts)
     center = center_control(board, me)
     return W_THREAT*(my_th - opp_th) + W_MOB*mob + W_CENTER*center
@@ -143,15 +143,15 @@ class Searcher:
         self.t0 = 0.0
         # TT : clé -> (profondeur, score, meilleur_coup)
         self.tt: Dict[Any, Tuple[int, float, Optional[Tuple[int,int,Shape]]]] = {}
-        # heuristique d’historique et coups killers
+        # heuristique d’historique et coups tueurs
         self.history: Dict[Tuple[int,int,Shape], int] = {}
         self.killers: Dict[int, List[Tuple[int,int,Shape]]] = {}
 
-    # ---- gestion du temps ----
+    # ---- temps ----
     def time_up(self) -> bool:
         return (time.time() - self.t0) >= self.time_limit
 
-    # ---- clé TT stable (inclut les comptes de pièces) ----
+    # ---- clé TT stable (inclut les comptes) ----
     def counts_key(self, counts: Dict[Player, Dict[Shape,int]]) -> Tuple[Tuple[int,...], Tuple[int,...]]:
         p1 = tuple(counts[Player.PLAYER1].get(sh, 0) for sh in Shape)
         p2 = tuple(counts[Player.PLAYER2].get(sh, 0) for sh in Shape)
@@ -165,9 +165,8 @@ class Searcher:
                 cells.append(None if p is None else (p.shape.value, p.player.value))
         return (tuple(cells), side.value, self.counts_key(counts))
 
-    # ---- utilitaires tactiques ----
+    # ---- outils tactiques ----
     def has_immediate_win(self, board, counts, side: Player) -> Optional[Tuple[int,int,Shape]]:
-        """Renvoie un coup gagnant immédiat pour `side` s’il existe, sinon None."""
         for (r, c, sh) in generate_valid_moves(board, side, counts[side]):
             board[r][c] = Piece(sh, side)
             if check_victory_after(board, r, c):
@@ -177,12 +176,14 @@ class Searcher:
         return None
 
     def blocks_opponent_win(self, board, counts, side: Player, mv: Tuple[int,int,Shape]) -> int:
-        """Renvoie 1 si jouer `mv` empêche une victoire immédiate de l’adversaire, sinon 0."""
+        """Renvoie 1 si jouer mv empêche une victoire immédiate de l’adversaire."""
         opp = self.opp if side == self.me else self.me
         r, c, sh = mv
-        # Idée : s’il existait une victoire adverse en (r,c), occuper cette case la bloque.
-        # On teste si l’adversaire pourrait gagner en (r,c) avec une forme encore disponible ;
-        # si oui, jouer `mv` en (r,c) neutralise cette menace.
+        # si en posant ma pièce ici, cette case n’est plus libre pour que l’adv gagne, on compte.
+        # ou si j’utilise la même forme qui donnerait la victoire à l’adversaire et que je la rends illégale.
+        # Test ciblé : existait-il une victoire de l’adversaire sur cette même case ?
+        # Nous cherchons toutes les victoires de l’adversaire et voyons si ce mv les annule.
+        # (optimisation légère : tester uniquement la cellule elle-même)
         for sh2 in Shape:
             if counts[opp].get(sh2, 0) <= 0: continue
             if not is_valid_move(board, r, c, sh2, opp): continue
@@ -190,6 +191,7 @@ class Searcher:
             win = check_victory_after(board, r, c)
             board[r][c] = None
             if win:
+                # Si je joue mv sur (r,c), je bloque
                 return 1 if (mv[0] == r and mv[1] == c) else 0
         return 0
 
@@ -198,7 +200,7 @@ class Searcher:
         scored = []
         opp = self.opp if side == self.me else self.me
 
-        # PV/TT en premier, si disponible
+        # Variante principale / TT d’abord, si disponible
         tt_move = None
         key = self.board_key(board, side, counts)
         if key in self.tt and self.tt[key][2] is not None:
@@ -213,7 +215,7 @@ class Searcher:
             win = check_victory_after(board, r, c)
             board[r][c] = None
 
-            # blocage valide (comme dans AB+)
+            # blocage valable (comme dans AB+)
             block = 0
             for sh2 in Shape:
                 if counts[opp].get(sh2, 0) <= 0: continue
@@ -243,7 +245,7 @@ class Searcher:
             return heuristic(board, self.me, counts), None
 
         # Extension de menace (quiescence légère)
-        # si un camp a une victoire en un coup ici, on étend d’un pli
+        # si l’un ou l’autre camp a un mat-en-1 ici, on étend d’un pli
         ext = 0
         if depth > 0:
             if self.has_immediate_win(board, counts, side) is not None: ext = 1
@@ -259,7 +261,7 @@ class Searcher:
         if not moves:
             return (LOSS_SCORE if side == self.me else WIN_SCORE), None
 
-        # Victoire immédiate : raccourci + écriture TT
+        # Victoire immédiate : raccourci aussi pour la TT
         for (r, c, sh) in moves:
             board[r][c] = Piece(sh, side)
             if check_victory_after(board, r, c):
@@ -294,7 +296,7 @@ class Searcher:
                 if value > alpha:
                     alpha = value
                 if alpha >= beta:
-                    # coupure bêta : enregistre killers + history
+                    # coupure bêta : coups tueurs + historique
                     ks = self.killers.setdefault(ply, [])
                     if mv not in ks:
                         if len(ks) < 2: ks.append(mv)
@@ -340,7 +342,7 @@ class Searcher:
 
         best_move = None
         prev_score = 0.0
-        # profondeur cible raisonnable pour un plateau 4x4
+        # profondeur cible raisonnable pour 4x4
         for depth in range(2, 10):
             if self.time_up(): break
 
@@ -352,7 +354,7 @@ class Searcher:
             score, move = self.search(board, counts, self.me, depth, alpha, beta, ply=0)
             if self.time_up(): break
 
-            # échec de fenêtre => relance avec fenêtre complète
+            # échec de la fenêtre ⇒ relancer avec fenêtre complète
             if score <= alpha:
                 score, move = self.search(board, counts, self.me, depth, ALPHA_INIT, BETA_INIT, ply=0)
             elif score >= beta:
