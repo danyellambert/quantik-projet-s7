@@ -1,8 +1,7 @@
 # Quantik AI Suite — Alpha–Beta, MCTS, Genetic & Hybrids
 
 > **One-stop repository** for experimenting with multiple agents for the game **Quantik**: classic **Alpha–Beta** engines (baseline / + / ++), **MCTS** variants (baseline / + / ++), **Genetic Algorithm (GA)** learners (baseline / + / ++), and **hybrid models** (AB+MCTS, GA evaluated by AB). Comes with a **reproducible tournament runner**, rich **diagnostics**, **ratings** (Elo & Glicko‑1), and an optional **GUI** for interactive play and quick smoke‑tests.
->
-> This README was refreshed to match the **final state of the codebase**, including the concrete MCTS implementations, the `core/` rules & types, the AI discovery/probe contract, and the runner’s output schemas. Nothing from the original README was removed; new details were **added** and clarified.
+
 
 ---
 
@@ -63,7 +62,7 @@ The suite helps you:
 
 ## Repository Structure
 
-> The exact layout can vary slightly across branches; below is the typical structure used by the tournament runner and GUI. The **MCTS** implementations listed here match the versions in this repository snapshot.
+> The exact layout can vary slightly across branches; below is the typical structure used by the tournament runner and GUI.
 
 ```
 quantik-test/
