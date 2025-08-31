@@ -1,0 +1,78 @@
+{
+  "timestamp_utc": "2025-08-31T15:09:57+00:00",
+  "out_dir": "/Users/danyellambert/Downloads/quantik-test/tournament/out/20250831-150956",
+  "config": {
+    "SEEDS": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136
+    ],
+    "GAMES_PER_SEED": 4,
+    "FILTER_MUTE": true,
+    "PROBE_TIMEOUT": 1.75,
+    "TIME_PER_MOVE": null,
+    "USE_SPRT": true,
+    "SPRT_P0": 0.5,
+    "SPRT_P1": 0.6,
+    "SPRT_ALPHA": 0.05,
+    "SPRT_BETA": 0.1,
+    "BOOTSTRAP_N": 5000,
+    "USE_GLICKO": true,
+    "GLICKO_START_RATING": 1500.0,
+    "GLICKO_START_RD": 350.0,
+    "SHOW_PER_GAME_LINES": true,
+    "FIRST_PLIES_TO_LOG": 4,
+    "TOP_OPENINGS_TO_SHOW": 8
+  },
+  "ais_discovered": [
+    {
+      "name": "AlphaBeta++",
+      "module": "ai_players.alphabeta_adv+.algorithme",
+      "cls": "QuantikAI"
+    },
+    {
+      "name": "Génétique (éval AB)",
+      "module": "ai_players.genetic_ab_eval.algorithme",
+      "cls": "QuantikAI"
+    }
+  ],
+  "ais_excluded_probe_mute": [],
+  "import_errors": [],
+  "ai_module_hashes": {
+    "AlphaBeta++": "72c6ad78",
+    "Génétique (éval AB)": "785dde5c"
+  }
+}

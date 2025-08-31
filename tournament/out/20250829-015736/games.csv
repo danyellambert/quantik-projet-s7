@@ -1,0 +1,325 @@
+game_uid,pair,starter,winner,end_reason,plies_total,opening,time_p1,time_p2,moves_p1,moves_p2,branch_sum_p1,branch_sum_p2,forced_p1,forced_p2,missed_win_p1,missed_win_p2,gave_opp_win_p1,gave_opp_win_p2
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.515877,3.770475,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.416061,3.949670,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.573077,3.770092,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.470148,3.925810,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.391334,3.769419,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.887421,3.980420,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.342229,3.763565,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.508020,4.022823,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.412400,3.767408,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.458680,4.084587,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.646113,3.763213,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.668046,3.964738,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.464481,3.765781,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.811657,3.960023,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.567011,3.764740,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.881839,4.095493,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.770095,3.762426,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.978277,4.004480,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.689383,3.773346,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.869311,3.983002,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.627355,3.767528,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.676814,4.016463,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.575584,3.762417,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.933994,3.959835,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.509912,3.768360,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.682589,3.999899,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.492516,3.769078,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.659229,3.975480,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.375391,3.764552,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.635219,3.964507,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.267064,3.769733,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.749062,3.955149,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.482990,3.765958,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.690473,3.962255,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.323870,3.767101,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.607898,3.967286,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.291010,3.766729,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.794959,4.002188,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.337400,3.762399,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.715222,3.980653,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.445033,3.772548,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.504323,3.982827,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.523036,3.762155,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.831751,3.970961,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.390494,3.760969,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.686674,3.942376,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.393013,3.765895,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.690515,3.953817,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.399531,3.766510,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.577172,3.963821,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.516178,3.764620,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.626902,3.959355,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.245733,3.768419,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.619549,3.974769,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.281980,3.761111,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.608630,4.005042,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.471689,3.765311,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.583977,3.979339,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.339054,3.767464,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.634106,3.967687,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.403297,3.764818,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.678508,3.966621,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.315411,3.766893,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.707820,3.971599,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.342817,3.766291,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.687029,3.962845,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.441970,3.763003,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.022687,3.988790,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.412796,3.763980,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.686947,3.998740,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.323797,3.767042,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.560683,3.973421,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.417906,3.768029,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1010006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.628779,3.967222,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.385974,3.762700,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2020006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.709492,3.983291,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.470679,3.766851,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3030006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.583997,3.980058,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.368851,3.764332,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4040006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.784281,3.943812,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.283811,3.767977,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5050006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.687149,3.960972,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.305156,3.764933,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6060006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.742030,3.986264,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.408647,3.760861,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7070006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.639279,3.945533,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.441986,3.773807,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8080006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.561777,3.987845,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.384388,3.763561,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9090006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.525714,3.973016,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.397882,3.761203,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed1120006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.549072,3.955629,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.311733,3.768011,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed2130006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.524384,3.977744,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.177738,3.767150,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed3140006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.483543,3.948986,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.212202,3.761938,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed4150006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.475323,3.958178,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.292092,3.767624,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed5160006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.418214,3.945534,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.200888,3.761395,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed6170006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.556050,3.966468,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.251717,3.761111,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed7180006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.533529,3.973034,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.192523,3.767218,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed8190006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.454304,3.931781,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.274225,3.765240,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta+__seed9200006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.401843,3.953653,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.210145,3.770831,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.479912,3.970099,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.290521,3.766289,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.485687,3.947555,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.454356,3.769368,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.417116,3.962136,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.153506,3.767119,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.397381,3.956872,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.314530,3.766027,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.449481,3.940807,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.168561,3.766372,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.467921,3.953034,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.122059,3.763382,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.517356,3.940670,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.317087,3.767274,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.751887,3.968904,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.504366,3.771268,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.803937,3.938770,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.254319,3.769367,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.424175,3.958814,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.248678,3.763308,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.461020,3.969191,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.196371,3.763142,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.474200,3.950921,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.412212,3.772756,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.549371,3.963612,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.279020,3.765117,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.484267,3.954279,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.200072,3.766233,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.551847,3.977404,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.159500,3.764741,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.486789,3.942053,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.268372,3.770647,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.570980,3.990027,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200001__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.214194,3.764598,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200002__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.470463,3.967446,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.418751,3.766245,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.591154,3.982429,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.341763,3.762191,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.550071,3.962514,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.406831,3.768050,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.868965,3.971141,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.432721,3.767099,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.628511,3.988821,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.442551,3.763245,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.757807,3.979324,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.500805,3.767461,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.788072,3.950138,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.401877,3.768176,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.733763,3.978397,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.265645,3.761987,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.045927,3.962363,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.340683,3.764320,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.521281,3.987622,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.277507,3.767207,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.597395,3.959002,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.311704,3.763278,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.412823,3.977129,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.222414,3.761374,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.504379,3.955641,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.205021,3.761707,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.556805,3.941715,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.147191,3.766678,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.471318,3.972030,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.187438,3.761536,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.530602,3.948302,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.253296,3.764509,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.460684,3.929278,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.267959,3.762011,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.566180,3.949363,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200003__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.203685,3.765962,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200004__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.515344,3.956546,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.201873,3.765347,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1010006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.692392,3.945816,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.414004,3.762231,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2020006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.466040,3.930560,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.146800,3.773291,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3030006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.525834,3.949884,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.189098,3.761289,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4040006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.440693,3.970979,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.252276,3.781351,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5050006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.491693,3.941727,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.414992,3.788591,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6060006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.515249,3.938111,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.236782,3.768241,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7070006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.461591,3.945361,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.205542,3.761794,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8080006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.543836,3.955737,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.224790,3.764119,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9090006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.425011,3.933520,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.250438,3.764106,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed1120006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.491514,3.950982,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.295445,3.761322,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed2130006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.428323,3.934608,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.216705,3.772615,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed3140006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.544983,3.967461,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.181117,3.762539,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed4150006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.480942,3.949918,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.178412,3.763609,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed5160006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.427534,3.966362,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.316493,3.761370,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed6170006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.470141,3.943698,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.305984,3.767480,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed7180006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.438965,3.978913,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.252085,3.764173,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed8190006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.529922,3.951116,4,5,135,191,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200005__Astart,,A,B,victory,10,"0,0,CIRCLE | 1,2,CIRCLE | 2,1,SQUARE | 3,3,SQUARE",2.237144,3.767563,5,5,180,141,0,0,0,0,1,0
+AlphaBeta (baseline)__vs__AlphaBeta++__seed9200006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",2.495989,3.970007,4,5,135,191,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1010001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.232485,3.753571,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1010002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751793,4.200422,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2020001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.210721,3.752268,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2020002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751882,4.249966,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3030001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.214618,3.752852,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3030002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752153,4.253547,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4040001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.223391,3.751482,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4040002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751920,4.230629,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5050001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.249918,3.754134,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5050002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752178,4.208816,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6060001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.237631,3.752755,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6060002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751429,4.212898,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7070001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.220120,3.751664,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7070002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.754794,4.187995,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8080001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.199316,3.751915,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8080002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753010,4.235897,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9090001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.189195,3.752817,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9090002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752256,4.220344,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed1120001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.186741,3.751967,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1120002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751780,4.227424,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2130001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.235399,3.751778,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2130002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752740,4.207597,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3140001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.232688,3.752613,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3140002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751662,4.257439,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4150001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.245102,3.752180,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4150002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753098,4.248054,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5160001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.226301,3.752498,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5160002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752055,4.252792,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6170001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.196903,3.751634,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6170002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752539,4.231382,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7180001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.211666,3.752346,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7180002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751947,4.186011,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8190001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.166121,3.752887,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8190002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753285,4.177112,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9200001__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.373444,3.752893,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9200002__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751373,4.173526,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed1010003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.241250,3.751602,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1010004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751715,4.173117,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2020003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.177891,3.752075,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2020004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753191,4.147804,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3030003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.124612,3.751411,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3030004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752136,4.172314,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4040003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.114690,3.751767,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4040004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751377,4.184747,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5050003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.114757,3.751891,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5050004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751747,4.429690,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6060003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.197753,3.758387,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6060004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753627,4.176459,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7070003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.345585,3.753374,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7070004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752797,4.254095,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8080003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.162655,3.752406,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8080004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751836,4.209050,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9090003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.144981,3.751504,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9090004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751848,4.175265,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed1120003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.155832,3.752934,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1120004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751838,4.153445,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2130003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.154615,3.752331,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2130004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752713,4.329355,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3140003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.135690,3.751442,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3140004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751710,4.148290,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4150003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.162463,3.751789,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4150004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751501,4.161344,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5160003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.152345,3.752755,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5160004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751834,4.124903,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6170003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.106658,3.751449,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6170004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751758,4.126870,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7180003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.134612,3.752730,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7180004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751588,4.096902,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8190003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.106932,3.751675,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8190004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752605,4.124488,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9200003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.131290,3.751873,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9200004__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751432,4.127506,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed1010005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.135254,3.751439,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1010006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753472,4.122740,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2020005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.116055,3.751523,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2020006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751797,4.113477,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3030005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.128590,3.751419,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3030006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751443,4.115712,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4040005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.128698,3.751739,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4040006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752055,4.110311,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5050005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.149658,3.751564,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5050006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751894,4.119113,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6060005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.113639,3.751653,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6060006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751638,4.102796,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7070005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.105988,3.751715,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7070006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751595,4.114056,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8080005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.117100,3.752800,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8080006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752891,4.109624,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9090005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.236029,3.752578,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9090006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751484,4.120091,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed1120005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.122880,3.752091,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed1120006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753393,4.117939,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed2130005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.113812,3.751699,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed2130006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751775,4.117648,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed3140005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.116938,3.751564,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed3140006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751723,4.121247,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed4150005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.119253,3.752690,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed4150006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751495,4.107836,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed5160005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.123566,3.751514,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed5160006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.751558,4.123311,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed6170005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.120183,3.751960,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed6170006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752136,4.125810,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed7180005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.125138,3.753082,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed7180006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752652,4.109731,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed8190005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.112748,3.751522,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed8190006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.753090,4.123603,4,4,140,174,0,0,0,0,0,1
+AlphaBeta+__vs__AlphaBeta++__seed9200005__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",4.111881,3.751727,4,4,174,140,0,0,0,0,1,0
+AlphaBeta+__vs__AlphaBeta++__seed9200006__Bstart,,B,A,victory,8,"1,1,CIRCLE | 2,2,CIRCLE | 0,2,SQUARE | 1,0,SQUARE",3.752226,4.104618,4,4,140,174,0,0,0,0,0,1

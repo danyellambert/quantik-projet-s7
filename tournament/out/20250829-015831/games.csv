@@ -1,0 +1,325 @@
+game_uid,pair,starter,winner,end_reason,plies_total,opening,time_p1,time_p2,moves_p1,moves_p2,branch_sum_p1,branch_sum_p2,forced_p1,forced_p2,missed_win_p1,missed_win_p2,gave_opp_win_p1,gave_opp_win_p2
+Génétique (baseline)__vs__Génétique+__seed1010001__Astart,,A,B,victory,8,"1,1,SQUARE | 3,0,DIAMOND | 2,1,TRIANGLE | 2,2,CIRCLE",0.002498,3.630480,4,4,164,136,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1010002__Bstart,,B,A,victory,10,"2,1,TRIANGLE | 1,1,CIRCLE | 3,3,TRIANGLE | 1,2,DIAMOND",0.003524,6.075198,5,5,141,162,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique+__seed2020001__Astart,,A,B,no_move,12,"1,2,TRIANGLE | 3,0,CIRCLE | 1,1,DIAMOND | 3,3,CIRCLE",0.002752,5.639734,6,6,190,133,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed2020002__Bstart,,B,B,victory,9,"1,0,TRIANGLE | 1,1,CIRCLE | 0,3,SQUARE | 2,1,CIRCLE",0.001517,5.241644,4,5,120,176,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030001__Astart,,A,B,victory,8,"1,1,CIRCLE | 3,0,TRIANGLE | 1,2,SQUARE | 2,3,DIAMOND",0.002114,3.606919,4,4,162,142,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030002__Bstart,,B,B,victory,7,"3,1,CIRCLE | 2,2,DIAMOND | 1,2,CIRCLE | 2,1,DIAMOND",0.001109,4.016944,3,4,110,161,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4040001__Astart,,A,B,victory,8,"2,1,CIRCLE | 1,0,DIAMOND | 2,2,CIRCLE | 1,3,SQUARE",0.002630,4.018747,4,4,153,141,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4040002__Bstart,,B,B,victory,7,"1,2,TRIANGLE | 2,2,CIRCLE | 0,3,DIAMOND | 2,1,SQUARE",0.002140,4.120198,3,4,123,168,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5050001__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,0,DIAMOND | 1,1,SQUARE | 2,1,CIRCLE",0.001142,2.762079,3,3,150,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5050002__Bstart,,B,B,no_move,9,"1,1,SQUARE | 1,2,DIAMOND | 2,2,SQUARE | 2,1,CIRCLE",0.001541,4.937673,4,5,131,163,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed6060001__Astart,,A,A,no_move,11,"2,1,TRIANGLE | 2,2,SQUARE | 1,2,TRIANGLE | 0,0,CIRCLE",0.003012,5.241146,6,5,167,135,0,1,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed6060002__Bstart,,B,B,victory,9,"2,1,CIRCLE | 2,2,SQUARE | 3,3,DIAMOND | 1,2,DIAMOND",0.002283,4.860946,4,5,128,193,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070001__Astart,,A,B,victory,8,"1,1,TRIANGLE | 2,1,SQUARE | 1,2,TRIANGLE | 3,3,DIAMOND",0.002095,3.844211,4,4,155,142,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070002__Bstart,,B,B,victory,9,"3,1,CIRCLE | 2,2,CIRCLE | 1,2,TRIANGLE | 2,1,DIAMOND",0.001814,5.094561,4,5,127,194,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080001__Astart,,A,B,victory,8,"1,1,DIAMOND | 3,0,CIRCLE | 2,1,SQUARE | 2,3,TRIANGLE",0.002475,3.968849,4,4,164,138,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080002__Bstart,,B,B,no_move,9,"0,3,TRIANGLE | 1,2,CIRCLE | 2,1,TRIANGLE | 2,2,SQUARE",0.001533,5.413434,4,5,132,161,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed9090001__Astart,,A,B,victory,10,"1,1,TRIANGLE | 3,0,SQUARE | 2,1,DIAMOND | 2,2,TRIANGLE",0.004236,4.793267,5,5,183,145,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9090002__Bstart,,B,B,victory,9,"1,2,TRIANGLE | 2,2,CIRCLE | 1,1,TRIANGLE | 2,1,DIAMOND",0.002872,5.150520,4,5,145,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1120001__Astart,,A,B,victory,6,"1,1,CIRCLE | 1,2,TRIANGLE | 2,1,TRIANGLE | 2,3,DIAMOND",0.001638,2.680956,3,3,150,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1120002__Bstart,,B,B,victory,13,"2,1,TRIANGLE | 1,1,CIRCLE | 3,3,DIAMOND | 1,2,CIRCLE",0.003227,6.485549,6,7,132,200,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130001__Astart,,A,B,victory,8,"1,2,CIRCLE | 1,1,TRIANGLE | 2,1,DIAMOND | 0,0,SQUARE",0.002708,3.995339,4,4,178,143,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130002__Bstart,,B,B,victory,7,"2,3,TRIANGLE | 1,2,TRIANGLE | 2,2,SQUARE | 1,1,TRIANGLE",0.001071,4.032904,3,4,115,181,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3140001__Astart,,A,B,victory,6,"1,1,CIRCLE | 3,0,DIAMOND | 2,2,SQUARE | 0,1,TRIANGLE",0.001682,2.691504,3,3,148,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3140002__Bstart,,B,B,victory,5,"2,2,CIRCLE | 1,1,CIRCLE | 0,1,DIAMOND | 2,1,TRIANGLE",0.001239,2.684922,2,3,92,152,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150001__Astart,,A,B,victory,6,"2,2,CIRCLE | 1,1,DIAMOND | 1,2,TRIANGLE | 0,1,SQUARE",0.002252,2.709028,3,3,150,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150002__Bstart,,B,B,victory,7,"2,1,CIRCLE | 1,2,DIAMOND | 1,0,SQUARE | 2,2,DIAMOND",0.001726,4.067457,3,4,112,173,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160001__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,3,DIAMOND | 1,1,CIRCLE | 0,1,SQUARE",0.001575,2.718884,3,3,149,122,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160002__Bstart,,B,B,victory,7,"2,1,CIRCLE | 2,2,DIAMOND | 3,0,SQUARE | 1,1,SQUARE",0.002731,4.183825,3,4,124,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170001__Astart,,A,B,victory,8,"1,2,TRIANGLE | 3,0,DIAMOND | 1,1,DIAMOND | 2,3,CIRCLE",0.001985,3.999654,4,4,168,133,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170002__Bstart,,B,B,victory,9,"2,1,CIRCLE | 1,2,CIRCLE | 3,0,CIRCLE | 2,2,TRIANGLE",0.002990,5.183382,4,5,136,181,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180001__Astart,,A,B,victory,12,"2,2,CIRCLE | 0,3,SQUARE | 1,2,CIRCLE | 3,0,SQUARE",0.003871,4.816349,6,6,159,137,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180002__Bstart,,B,B,victory,7,"0,3,CIRCLE | 2,1,SQUARE | 3,2,DIAMOND | 1,1,SQUARE",0.001627,4.100782,3,4,106,169,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8190001__Astart,,A,B,victory,6,"1,2,CIRCLE | 2,3,SQUARE | 2,2,TRIANGLE | 0,2,DIAMOND",0.002112,2.678647,3,3,150,126,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8190002__Bstart,,B,B,victory,7,"1,0,TRIANGLE | 1,2,CIRCLE | 0,3,SQUARE | 2,1,CIRCLE",0.002171,4.020129,3,4,110,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200001__Astart,,A,B,victory,6,"1,2,CIRCLE | 0,1,DIAMOND | 1,1,TRIANGLE | 2,0,SQUARE",0.001645,2.708790,3,3,148,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200002__Bstart,,B,B,victory,5,"0,2,SQUARE | 2,2,DIAMOND | 0,0,CIRCLE | 1,2,CIRCLE",0.001103,2.751192,2,3,94,152,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1010003__Astart,,A,B,victory,6,"1,1,TRIANGLE | 2,0,CIRCLE | 1,2,TRIANGLE | 0,1,DIAMOND",0.001373,2.702424,3,3,136,127,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1010004__Bstart,,B,B,victory,9,"1,2,SQUARE | 2,1,SQUARE | 1,1,CIRCLE | 2,2,CIRCLE",0.003232,5.372264,4,5,135,201,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2020003__Astart,,A,B,victory,10,"2,1,DIAMOND | 1,0,CIRCLE | 1,2,DIAMOND | 0,0,SQUARE",0.003698,4.597138,5,5,162,151,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2020004__Bstart,,B,B,victory,11,"1,1,SQUARE | 2,2,SQUARE | 3,0,TRIANGLE | 2,1,CIRCLE",0.004540,5.299865,5,6,129,188,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030003__Astart,,A,B,victory,6,"2,2,TRIANGLE | 3,0,SQUARE | 1,1,CIRCLE | 3,2,DIAMOND",0.001116,2.704693,3,3,150,122,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030004__Bstart,,B,B,victory,5,"2,2,DIAMOND | 1,1,SQUARE | 1,0,TRIANGLE | 1,2,CIRCLE",0.001240,2.718076,2,3,92,152,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4040003__Astart,,A,B,victory,8,"1,1,TRIANGLE | 0,3,CIRCLE | 2,1,DIAMOND | 1,0,SQUARE",0.002209,3.788457,4,4,166,139,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4040004__Bstart,,B,B,victory,9,"3,1,SQUARE | 1,1,DIAMOND | 2,2,CIRCLE | 1,2,DIAMOND",0.002017,5.179824,4,5,122,190,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5050003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,3,TRIANGLE | 2,1,CIRCLE | 2,2,TRIANGLE",0.001539,4.038394,4,4,163,134,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5050004__Bstart,,B,B,victory,9,"1,0,DIAMOND | 2,2,CIRCLE | 3,1,TRIANGLE | 1,2,CIRCLE",0.003505,4.775065,4,5,116,183,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6060003__Astart,,A,B,victory,10,"2,1,TRIANGLE | 3,2,SQUARE | 1,2,CIRCLE | 1,1,DIAMOND",0.002499,4.754197,5,5,176,145,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6060004__Bstart,,B,B,victory,7,"0,3,CIRCLE | 2,1,TRIANGLE | 1,1,DIAMOND | 1,2,TRIANGLE",0.001646,4.078730,3,4,109,168,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070003__Astart,,A,B,victory,10,"2,2,TRIANGLE | 2,1,CIRCLE | 1,1,SQUARE | 0,0,DIAMOND",0.003146,4.650799,5,5,186,142,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070004__Bstart,,B,B,victory,9,"2,1,CIRCLE | 2,2,DIAMOND | 1,3,CIRCLE | 1,1,SQUARE",0.002061,4.981833,4,5,129,170,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080003__Astart,,A,B,victory,12,"2,2,TRIANGLE | 0,3,SQUARE | 1,2,CIRCLE | 3,0,SQUARE",0.004060,5.151146,6,6,190,150,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080004__Bstart,,B,B,victory,7,"1,1,SQUARE | 1,2,CIRCLE | 2,1,TRIANGLE | 2,2,CIRCLE",0.003373,3.912918,3,4,114,181,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9090003__Astart,,A,B,victory,6,"1,2,TRIANGLE | 2,3,SQUARE | 2,1,DIAMOND | 0,0,CIRCLE",0.001868,2.739524,3,3,148,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9090004__Bstart,,B,B,no_move,9,"2,2,TRIANGLE | 1,2,SQUARE | 0,0,TRIANGLE | 2,1,SQUARE",0.003498,5.057338,4,5,120,161,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed1120003__Astart,,A,B,victory,8,"2,2,SQUARE | 0,3,CIRCLE | 1,2,SQUARE | 3,1,CIRCLE",0.002904,4.034126,4,4,155,129,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1120004__Bstart,,B,B,victory,7,"2,1,SQUARE | 2,2,CIRCLE | 0,0,DIAMOND | 1,1,TRIANGLE",0.001094,3.982202,3,4,121,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130003__Astart,,A,B,victory,8,"2,2,DIAMOND | 1,2,TRIANGLE | 2,1,SQUARE | 0,0,CIRCLE",0.001975,3.727453,4,4,168,138,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130004__Bstart,,B,B,victory,7,"2,1,CIRCLE | 1,1,DIAMOND | 3,3,TRIANGLE | 1,2,SQUARE",0.001108,4.023734,3,4,121,169,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3140003__Astart,,A,B,no_move,8,"2,1,DIAMOND | 2,0,CIRCLE | 1,1,DIAMOND | 3,3,SQUARE",0.002021,4.746587,4,4,151,141,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed3140004__Bstart,,B,B,victory,9,"1,2,DIAMOND | 2,2,CIRCLE | 1,0,DIAMOND | 2,1,DIAMOND",0.002983,5.014779,4,5,144,181,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150003__Astart,,A,B,victory,6,"2,1,SQUARE | 1,1,CIRCLE | 2,2,DIAMOND | 3,2,TRIANGLE",0.001622,2.720387,3,3,150,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150004__Bstart,,B,B,victory,7,"2,1,SQUARE | 2,2,TRIANGLE | 1,1,DIAMOND | 1,2,SQUARE",0.001632,4.022454,3,4,122,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160003__Astart,,A,B,victory,8,"1,1,CIRCLE | 2,2,SQUARE | 1,2,CIRCLE | 3,0,TRIANGLE",0.002492,3.983853,4,4,154,141,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160004__Bstart,,B,B,victory,5,"2,2,TRIANGLE | 1,1,CIRCLE | 1,3,DIAMOND | 1,2,SQUARE",0.000716,2.686393,2,3,92,152,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170003__Astart,,A,B,victory,6,"1,2,SQUARE | 3,0,TRIANGLE | 2,1,DIAMOND | 2,3,CIRCLE",0.001770,2.670108,3,3,149,122,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170004__Bstart,,B,B,victory,7,"2,2,CIRCLE | 1,1,CIRCLE | 3,0,DIAMOND | 1,2,SQUARE",0.002034,4.019459,3,4,117,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180003__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,1,SQUARE | 1,2,DIAMOND | 2,0,CIRCLE",0.001675,2.698066,3,3,149,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180004__Bstart,,B,B,victory,7,"1,1,TRIANGLE | 1,2,SQUARE | 2,0,DIAMOND | 2,1,SQUARE",0.001164,4.056443,3,4,110,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8190003__Astart,,A,B,victory,8,"1,2,DIAMOND | 2,3,TRIANGLE | 1,1,SQUARE | 0,1,TRIANGLE",0.001501,3.690612,4,4,167,129,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8190004__Bstart,,B,B,victory,9,"0,3,TRIANGLE | 1,1,SQUARE | 1,2,CIRCLE | 2,2,DIAMOND",0.003064,5.182079,4,5,134,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200003__Astart,,A,B,victory,10,"2,1,CIRCLE | 1,2,DIAMOND | 1,1,TRIANGLE | 2,2,DIAMOND",0.002566,5.056804,5,5,197,138,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200004__Bstart,,B,B,victory,5,"2,0,TRIANGLE | 2,1,DIAMOND | 1,1,SQUARE | 2,2,SQUARE",0.000809,2.712398,2,3,93,153,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1010005__Astart,,A,B,victory,8,"1,2,DIAMOND | 2,3,CIRCLE | 2,1,SQUARE | 3,1,TRIANGLE",0.001896,3.707950,4,4,164,147,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1010006__Bstart,,B,B,victory,7,"0,2,TRIANGLE | 1,2,CIRCLE | 3,3,DIAMOND | 2,1,SQUARE",0.002111,3.962391,3,4,121,176,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2020005__Astart,,A,B,victory,8,"2,1,CIRCLE | 1,2,TRIANGLE | 2,2,SQUARE | 3,3,CIRCLE",0.001984,3.957331,4,4,171,138,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2020006__Bstart,,B,B,victory,7,"1,1,TRIANGLE | 2,1,DIAMOND | 2,0,SQUARE | 1,2,DIAMOND",0.002571,4.100885,3,4,110,171,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030005__Astart,,A,B,victory,8,"1,2,CIRCLE | 3,1,DIAMOND | 2,1,TRIANGLE | 1,3,DIAMOND",0.002986,4.003028,4,4,174,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3030006__Bstart,,B,B,no_move,9,"1,2,TRIANGLE | 1,1,CIRCLE | 3,0,TRIANGLE | 2,1,CIRCLE",0.002260,5.018001,4,5,120,170,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed4040005__Astart,,A,B,victory,10,"2,2,DIAMOND | 1,3,TRIANGLE | 2,1,CIRCLE | 3,2,SQUARE",0.003568,4.670350,5,5,164,144,1,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4040006__Bstart,,B,B,victory,9,"1,1,CIRCLE | 2,1,TRIANGLE | 1,2,SQUARE | 2,2,CIRCLE",0.002253,5.002819,4,5,136,194,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5050005__Astart,,A,B,no_move,12,"1,1,CIRCLE | 1,2,DIAMOND | 2,2,CIRCLE | 3,0,SQUARE",0.003072,5.438396,6,6,159,142,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed5050006__Bstart,,B,B,victory,7,"1,1,SQUARE | 1,2,TRIANGLE | 2,0,DIAMOND | 2,2,SQUARE",0.001588,4.125061,3,4,120,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6060005__Astart,,A,B,victory,10,"2,1,TRIANGLE | 0,2,CIRCLE | 1,1,TRIANGLE | 1,0,SQUARE",0.002444,4.763803,5,5,159,156,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6060006__Bstart,,B,B,victory,7,"2,1,SQUARE | 2,2,DIAMOND | 1,1,SQUARE | 1,2,DIAMOND",0.001599,3.973032,3,4,116,160,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070005__Astart,,A,B,victory,10,"1,1,SQUARE | 2,1,CIRCLE | 2,2,TRIANGLE | 3,3,DIAMOND",0.002434,4.637725,5,5,167,147,1,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7070006__Bstart,,B,B,victory,7,"2,1,DIAMOND | 1,2,CIRCLE | 3,1,TRIANGLE | 2,2,SQUARE",0.001349,3.936524,3,4,120,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080005__Astart,,A,B,victory,6,"1,1,CIRCLE | 0,2,DIAMOND | 2,1,SQUARE | 3,1,TRIANGLE",0.001701,2.769910,3,3,149,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8080006__Bstart,,B,B,victory,5,"3,1,CIRCLE | 1,2,DIAMOND | 0,2,CIRCLE | 2,2,TRIANGLE",0.001791,2.715457,2,3,94,139,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9090005__Astart,,A,B,victory,8,"1,1,SQUARE | 3,2,CIRCLE | 1,2,DIAMOND | 2,0,TRIANGLE",0.002601,4.010827,4,4,162,149,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9090006__Bstart,,B,B,victory,9,"2,1,DIAMOND | 2,2,CIRCLE | 3,0,TRIANGLE | 1,2,TRIANGLE",0.002605,5.177177,4,5,146,177,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1120005__Astart,,A,B,victory,10,"2,2,CIRCLE | 0,0,DIAMOND | 1,1,SQUARE | 0,3,DIAMOND",0.003457,4.711066,5,5,185,127,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed1120006__Bstart,,B,B,victory,9,"0,3,SQUARE | 2,2,CIRCLE | 1,1,TRIANGLE | 1,2,CIRCLE",0.001517,5.056216,4,5,116,184,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130005__Astart,,A,B,victory,8,"1,1,SQUARE | 1,2,DIAMOND | 2,1,SQUARE | 3,3,CIRCLE",0.001997,3.980361,4,4,149,144,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed2130006__Bstart,,B,B,victory,7,"2,1,TRIANGLE | 1,1,SQUARE | 1,2,TRIANGLE | 2,2,SQUARE",0.001111,3.963733,3,4,111,157,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3140005__Astart,,A,B,victory,10,"2,2,DIAMOND | 1,1,TRIANGLE | 1,2,CIRCLE | 1,3,TRIANGLE",0.002579,5.000339,5,5,192,135,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed3140006__Bstart,,B,B,victory,7,"1,1,SQUARE | 2,2,SQUARE | 2,1,TRIANGLE | 1,2,TRIANGLE",0.001643,4.043663,3,4,123,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150005__Astart,,A,B,victory,6,"1,2,CIRCLE | 0,0,TRIANGLE | 2,1,SQUARE | 1,3,DIAMOND",0.002738,2.748032,3,3,148,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed4150006__Bstart,,B,B,victory,7,"2,2,SQUARE | 1,1,SQUARE | 2,3,DIAMOND | 1,2,CIRCLE",0.001068,3.998709,3,4,122,177,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160005__Astart,,A,B,victory,6,"1,2,SQUARE | 2,1,TRIANGLE | 2,2,SQUARE | 0,1,CIRCLE",0.001598,2.658562,3,3,138,128,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed5160006__Bstart,,B,B,victory,5,"2,1,TRIANGLE | 1,1,SQUARE | 1,0,TRIANGLE | 1,2,CIRCLE",0.001213,2.718905,2,3,96,141,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170005__Astart,,A,B,victory,8,"2,1,TRIANGLE | 0,3,SQUARE | 2,2,SQUARE | 3,2,CIRCLE",0.002037,3.983599,4,4,168,134,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed6170006__Bstart,,B,B,victory,7,"1,2,SQUARE | 2,2,CIRCLE | 3,3,TRIANGLE | 2,1,DIAMOND",0.002465,3.998089,3,4,121,170,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180005__Astart,,A,B,victory,8,"1,2,CIRCLE | 2,1,TRIANGLE | 2,2,SQUARE | 0,0,TRIANGLE",0.002223,3.999928,4,4,171,129,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed7180006__Bstart,,B,B,victory,7,"2,2,SQUARE | 1,2,DIAMOND | 0,1,CIRCLE | 2,1,DIAMOND",0.002267,4.001729,3,4,108,181,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed8190005__Astart,,A,B,no_move,12,"1,2,SQUARE | 1,3,CIRCLE | 2,2,SQUARE | 0,0,DIAMOND",0.003701,5.393727,6,6,155,153,1,0,0,0,0,0
+Génétique (baseline)__vs__Génétique+__seed8190006__Bstart,,B,B,victory,9,"2,2,CIRCLE | 1,1,TRIANGLE | 0,2,CIRCLE | 2,1,TRIANGLE",0.001515,4.933509,4,5,124,174,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200005__Astart,,A,B,victory,4,"1,2,TRIANGLE | 1,3,SQUARE | 1,1,DIAMOND | 1,0,CIRCLE",0.001427,1.367313,2,2,114,95,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique+__seed9200006__Bstart,,B,B,victory,9,"1,2,CIRCLE | 2,1,SQUARE | 1,1,DIAMOND | 2,0,SQUARE",0.002830,4.942038,4,5,126,185,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010001__Astart,,A,B,victory,8,"1,1,SQUARE | 3,0,TRIANGLE | 2,1,DIAMOND | 0,2,TRIANGLE",0.001557,2.008615,4,4,166,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010002__Bstart,,B,B,victory,5,"1,0,CIRCLE | 2,2,DIAMOND | 0,0,SQUARE | 1,1,DIAMOND",0.001484,1.770857,2,3,93,151,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2020001__Astart,,A,B,victory,6,"1,2,TRIANGLE | 2,2,SQUARE | 1,1,TRIANGLE | 3,1,CIRCLE",0.003314,1.478381,3,3,138,129,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2020002__Bstart,,B,B,victory,7,"0,0,CIRCLE | 1,2,DIAMOND | 2,0,TRIANGLE | 1,1,DIAMOND",0.001855,2.439812,3,4,111,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3030001__Astart,,A,B,no_move,10,"1,1,CIRCLE | 2,3,SQUARE | 2,1,TRIANGLE | 3,3,DIAMOND",0.002397,3.110377,5,5,166,135,1,1,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed3030002__Bstart,,B,B,victory,7,"2,0,CIRCLE | 2,2,DIAMOND | 1,0,SQUARE | 1,2,DIAMOND",0.001679,2.336946,3,4,111,183,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4040001__Astart,,A,B,no_move,8,"2,1,CIRCLE | 0,3,TRIANGLE | 2,2,CIRCLE | 3,2,DIAMOND",0.001907,2.928950,4,4,150,140,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed4040002__Bstart,,B,B,victory,7,"1,2,SQUARE | 2,1,SQUARE | 0,1,CIRCLE | 2,2,DIAMOND",0.001135,2.505811,3,4,120,169,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050001__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,3,DIAMOND | 2,1,DIAMOND | 3,2,SQUARE",0.001559,1.463699,3,3,148,123,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050002__Bstart,,B,B,victory,7,"3,3,DIAMOND | 1,1,SQUARE | 2,2,CIRCLE | 1,2,DIAMOND",0.001637,2.441085,3,4,121,176,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060001__Astart,,A,B,victory,6,"2,1,TRIANGLE | 0,2,CIRCLE | 1,1,DIAMOND | 1,0,CIRCLE",0.001140,1.509977,3,3,152,113,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060002__Bstart,,B,B,victory,5,"1,3,TRIANGLE | 1,1,SQUARE | 2,0,CIRCLE | 1,2,DIAMOND",0.001255,1.972303,2,3,92,152,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7070001__Astart,,A,B,victory,8,"1,1,TRIANGLE | 2,1,SQUARE | 1,2,TRIANGLE | 3,3,SQUARE",0.002032,1.938455,4,4,160,131,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7070002__Bstart,,B,A,victory,10,"1,1,CIRCLE | 2,1,DIAMOND | 3,3,TRIANGLE | 2,2,CIRCLE",0.003714,3.705487,5,5,150,194,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique++__seed8080001__Astart,,A,B,victory,8,"1,1,DIAMOND | 2,3,SQUARE | 2,1,DIAMOND | 2,2,SQUARE",0.002514,2.026036,4,4,162,130,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8080002__Bstart,,B,B,victory,11,"0,0,SQUARE | 1,2,TRIANGLE | 3,1,TRIANGLE | 2,2,DIAMOND",0.003684,3.492561,5,6,144,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090001__Astart,,A,B,victory,10,"1,1,TRIANGLE | 0,3,TRIANGLE | 1,2,SQUARE | 0,1,SQUARE",0.003052,2.479766,5,5,199,140,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090002__Bstart,,B,B,victory,7,"2,2,CIRCLE | 1,1,CIRCLE | 2,3,DIAMOND | 1,2,TRIANGLE",0.001761,2.503571,3,4,126,172,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1120001__Astart,,A,B,no_move,12,"1,1,CIRCLE | 2,0,CIRCLE | 2,2,DIAMOND | 1,3,SQUARE",0.003379,3.644461,6,6,177,146,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed1120002__Bstart,,B,B,victory,7,"2,3,TRIANGLE | 2,2,DIAMOND | 3,1,SQUARE | 1,2,DIAMOND",0.002236,2.371043,3,4,110,182,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2130001__Astart,,A,B,no_move,8,"1,2,CIRCLE | 0,0,DIAMOND | 2,1,SQUARE | 3,3,DIAMOND",0.001987,2.478785,4,4,164,124,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed2130002__Bstart,,B,A,victory,12,"1,3,DIAMOND | 2,2,SQUARE | 1,0,DIAMOND | 2,1,TRIANGLE",0.002480,3.966560,6,6,150,164,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique++__seed3140001__Astart,,A,B,victory,12,"1,1,CIRCLE | 1,3,DIAMOND | 1,2,CIRCLE | 3,3,SQUARE",0.002707,3.011933,6,6,164,156,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3140002__Bstart,,B,B,victory,13,"3,1,SQUARE | 2,1,DIAMOND | 3,3,CIRCLE | 2,2,DIAMOND",0.004894,3.873143,6,7,125,185,1,1,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150001__Astart,,A,B,victory,8,"2,2,CIRCLE | 3,1,SQUARE | 1,2,SQUARE | 2,3,SQUARE",0.001935,2.006763,4,4,180,133,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150002__Bstart,,B,B,victory,7,"2,1,CIRCLE | 1,2,SQUARE | 3,3,TRIANGLE | 1,1,TRIANGLE",0.002160,2.438459,3,4,120,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5160001__Astart,,A,B,no_move,12,"2,2,TRIANGLE | 3,0,DIAMOND | 1,1,SQUARE | 3,3,SQUARE",0.004492,3.577963,6,6,199,146,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed5160002__Bstart,,B,B,victory,7,"1,2,SQUARE | 2,1,DIAMOND | 1,3,SQUARE | 1,1,DIAMOND",0.002056,2.306625,3,4,118,160,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170001__Astart,,A,B,victory,8,"1,2,TRIANGLE | 0,1,DIAMOND | 2,2,CIRCLE | 3,3,DIAMOND",0.002675,1.943746,4,4,166,128,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170002__Bstart,,B,B,victory,5,"1,0,SQUARE | 1,1,DIAMOND | 2,2,TRIANGLE | 1,2,CIRCLE",0.001267,1.748559,2,3,92,153,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180001__Astart,,A,B,victory,6,"2,2,CIRCLE | 0,3,SQUARE | 1,1,DIAMOND | 2,3,TRIANGLE",0.002109,1.537660,3,3,150,120,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180002__Bstart,,B,B,victory,11,"2,1,TRIANGLE | 2,2,SQUARE | 1,1,DIAMOND | 1,2,TRIANGLE",0.002478,3.302238,5,6,143,183,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8190001__Astart,,A,B,victory,10,"1,2,CIRCLE | 3,2,TRIANGLE | 1,1,SQUARE | 0,0,TRIANGLE",0.002504,2.382173,5,5,169,134,1,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8190002__Bstart,,B,B,victory,9,"2,2,SQUARE | 1,2,DIAMOND | 0,0,TRIANGLE | 1,1,SQUARE",0.002617,2.877564,4,5,131,191,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200001__Astart,,A,B,victory,6,"1,2,CIRCLE | 2,1,SQUARE | 2,2,DIAMOND | 1,1,TRIANGLE",0.002112,1.517488,3,3,151,126,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200002__Bstart,,B,B,victory,7,"2,0,CIRCLE | 2,2,SQUARE | 1,2,CIRCLE | 1,1,SQUARE",0.002221,2.443856,3,4,113,158,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010003__Astart,,A,B,victory,6,"1,1,TRIANGLE | 1,0,DIAMOND | 2,1,DIAMOND | 2,0,TRIANGLE",0.001707,1.567476,3,3,152,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010004__Bstart,,B,A,no_move,12,"3,2,DIAMOND | 1,2,CIRCLE | 0,3,DIAMOND | 2,1,CIRCLE",0.004426,3.699578,6,6,135,170,0,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed2020003__Astart,,A,B,victory,8,"2,1,DIAMOND | 0,0,SQUARE | 1,2,TRIANGLE | 1,1,SQUARE",0.002552,2.050301,4,4,170,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2020004__Bstart,,B,B,victory,7,"3,2,SQUARE | 2,1,DIAMOND | 1,3,TRIANGLE | 2,2,TRIANGLE",0.002196,2.252486,3,4,121,168,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3030003__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,1,TRIANGLE | 2,1,DIAMOND | 1,3,DIAMOND",0.001952,1.510639,3,3,150,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3030004__Bstart,,B,B,victory,7,"1,0,SQUARE | 1,1,TRIANGLE | 3,2,CIRCLE | 2,2,SQUARE",0.001666,2.120953,3,4,120,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4040003__Astart,,A,B,victory,6,"1,1,TRIANGLE | 2,1,CIRCLE | 2,2,TRIANGLE | 0,2,CIRCLE",0.001606,1.432833,3,3,140,114,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4040004__Bstart,,B,B,victory,9,"3,0,SQUARE | 1,1,TRIANGLE | 0,1,DIAMOND | 2,2,DIAMOND",0.001930,2.797878,4,5,128,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050003__Astart,,A,B,victory,8,"1,1,CIRCLE | 1,3,DIAMOND | 2,1,DIAMOND | 0,0,TRIANGLE",0.001452,1.779216,4,4,164,136,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050004__Bstart,,B,B,victory,9,"3,0,DIAMOND | 2,2,DIAMOND | 3,2,SQUARE | 2,1,SQUARE",0.001425,2.773303,4,5,151,186,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060003__Astart,,A,B,victory,6,"2,1,TRIANGLE | 0,3,CIRCLE | 1,2,SQUARE | 3,2,CIRCLE",0.001891,1.386565,3,3,152,111,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060004__Bstart,,B,B,no_move,13,"3,3,TRIANGLE | 1,1,SQUARE | 2,2,TRIANGLE | 2,1,CIRCLE",0.004517,4.092680,6,7,141,163,1,1,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed7070003__Astart,,A,B,victory,8,"2,2,TRIANGLE | 0,1,SQUARE | 1,1,DIAMOND | 3,0,CIRCLE",0.002023,1.890136,4,4,162,137,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7070004__Bstart,,B,B,victory,7,"0,3,SQUARE | 2,1,CIRCLE | 1,1,SQUARE | 2,2,TRIANGLE",0.003101,2.342138,3,4,126,157,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8080003__Astart,,A,B,victory,6,"2,2,TRIANGLE | 1,3,DIAMOND | 1,2,CIRCLE | 3,2,SQUARE",0.001659,1.434458,3,3,150,126,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8080004__Bstart,,B,B,victory,5,"2,2,TRIANGLE | 1,1,DIAMOND | 0,2,SQUARE | 1,2,CIRCLE",0.000735,1.787188,2,3,93,151,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090003__Astart,,A,B,victory,8,"1,2,TRIANGLE | 3,2,SQUARE | 1,1,SQUARE | 3,3,SQUARE",0.001899,1.930885,4,4,172,132,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090004__Bstart,,B,A,victory,10,"2,2,TRIANGLE | 2,1,CIRCLE | 2,3,TRIANGLE | 1,1,CIRCLE",0.002537,3.451751,5,5,139,167,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique++__seed1120003__Astart,,A,A,victory,7,"2,2,SQUARE | 3,3,TRIANGLE | 1,2,CIRCLE | 2,1,TRIANGLE",0.002004,1.940087,4,3,176,115,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique++__seed1120004__Bstart,,B,B,victory,5,"0,1,SQUARE | 2,1,TRIANGLE | 2,0,CIRCLE | 1,1,DIAMOND",0.000766,1.680932,2,3,93,153,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2130003__Astart,,A,B,victory,8,"2,2,DIAMOND | 0,0,CIRCLE | 2,1,CIRCLE | 1,3,SQUARE",0.001734,1.955489,4,4,170,134,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2130004__Bstart,,B,B,victory,9,"0,3,CIRCLE | 1,1,CIRCLE | 0,1,TRIANGLE | 1,2,SQUARE",0.001547,2.829680,4,5,134,201,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3140003__Astart,,A,B,victory,4,"2,1,DIAMOND | 0,1,SQUARE | 1,1,CIRCLE | 3,1,TRIANGLE",0.001369,0.853775,2,2,114,95,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3140004__Bstart,,B,B,victory,9,"0,3,DIAMOND | 1,2,CIRCLE | 2,1,SQUARE | 1,1,CIRCLE",0.002011,2.676769,4,5,122,183,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150003__Astart,,A,B,victory,6,"2,1,SQUARE | 2,3,TRIANGLE | 1,1,SQUARE | 0,2,CIRCLE",0.001582,1.346360,3,3,137,128,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150004__Bstart,,B,B,victory,7,"1,2,SQUARE | 2,1,TRIANGLE | 1,1,CIRCLE | 2,2,TRIANGLE",0.001105,2.171635,3,4,114,176,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5160003__Astart,,A,B,victory,6,"1,1,CIRCLE | 1,2,TRIANGLE | 2,2,SQUARE | 2,3,TRIANGLE",0.002128,1.447155,3,3,154,115,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5160004__Bstart,,B,B,victory,7,"1,3,SQUARE | 2,2,SQUARE | 2,3,TRIANGLE | 1,1,TRIANGLE",0.001583,2.388134,3,4,122,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170003__Astart,,A,B,victory,8,"1,2,SQUARE | 2,1,DIAMOND | 2,2,SQUARE | 3,1,DIAMOND",0.002457,1.803437,4,4,162,135,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170004__Bstart,,B,B,victory,7,"2,1,CIRCLE | 1,1,TRIANGLE | 2,2,TRIANGLE | 1,2,CIRCLE",0.001089,2.349619,3,4,123,180,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180003__Astart,,A,B,victory,6,"2,2,TRIANGLE | 0,3,DIAMOND | 1,1,SQUARE | 3,1,DIAMOND",0.001574,1.433893,3,3,150,111,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180004__Bstart,,B,B,victory,11,"1,2,TRIANGLE | 2,1,TRIANGLE | 0,2,TRIANGLE | 1,1,DIAMOND",0.003150,3.147443,5,6,153,192,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8190003__Astart,,A,B,victory,8,"1,2,DIAMOND | 2,3,DIAMOND | 2,1,TRIANGLE | 3,2,SQUARE",0.003030,1.910981,4,4,171,146,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8190004__Bstart,,B,B,victory,11,"2,2,CIRCLE | 1,2,TRIANGLE | 3,1,DIAMOND | 1,1,TRIANGLE",0.003566,3.221265,5,6,125,199,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200003__Astart,,A,B,victory,6,"2,1,CIRCLE | 0,2,SQUARE | 2,2,DIAMOND | 3,3,TRIANGLE",0.002211,1.412052,3,3,149,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200004__Bstart,,B,B,victory,5,"0,2,TRIANGLE | 2,2,SQUARE | 2,3,DIAMOND | 1,2,CIRCLE",0.001446,1.853087,2,3,93,153,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010005__Astart,,A,B,victory,10,"1,2,DIAMOND | 1,3,CIRCLE | 2,2,TRIANGLE | 1,1,CIRCLE",0.001882,2.416534,5,5,179,139,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1010006__Bstart,,B,B,victory,9,"0,3,DIAMOND | 2,2,TRIANGLE | 3,2,SQUARE | 1,1,DIAMOND",0.002679,2.923462,4,5,133,178,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2020005__Astart,,A,B,no_move,10,"2,1,CIRCLE | 0,0,DIAMOND | 1,2,CIRCLE | 3,3,DIAMOND",0.003001,2.830906,5,5,153,123,1,1,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed2020006__Bstart,,B,B,victory,7,"2,0,CIRCLE | 1,1,TRIANGLE | 1,2,CIRCLE | 2,1,TRIANGLE",0.001700,2.147420,3,4,110,161,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3030005__Astart,,A,B,victory,8,"1,2,CIRCLE | 3,1,SQUARE | 1,1,CIRCLE | 3,0,DIAMOND",0.002557,1.832727,4,4,154,140,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3030006__Bstart,,B,B,victory,7,"3,2,CIRCLE | 1,1,DIAMOND | 0,0,SQUARE | 1,2,DIAMOND",0.001580,2.256491,3,4,109,182,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4040005__Astart,,A,B,victory,8,"2,2,DIAMOND | 1,1,CIRCLE | 1,2,TRIANGLE | 3,0,TRIANGLE",0.002979,1.896612,4,4,164,149,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4040006__Bstart,,B,B,victory,7,"3,0,TRIANGLE | 1,1,TRIANGLE | 3,1,DIAMOND | 1,2,SQUARE",0.001616,2.470523,3,4,126,166,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050005__Astart,,A,B,victory,6,"1,1,CIRCLE | 3,2,TRIANGLE | 1,2,CIRCLE | 3,0,TRIANGLE",0.001588,1.357877,3,3,140,116,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5050006__Bstart,,B,B,victory,5,"2,0,SQUARE | 2,1,DIAMOND | 0,2,SQUARE | 2,2,TRIANGLE",0.001544,1.669587,2,3,94,141,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060005__Astart,,A,B,victory,6,"2,1,TRIANGLE | 3,2,DIAMOND | 2,2,SQUARE | 1,1,CIRCLE",0.001866,1.409979,3,3,149,125,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6060006__Bstart,,B,B,victory,9,"3,0,TRIANGLE | 2,2,SQUARE | 1,1,TRIANGLE | 1,2,DIAMOND",0.002088,2.606974,4,5,139,169,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7070005__Astart,,A,B,victory,6,"1,1,SQUARE | 3,0,DIAMOND | 2,2,DIAMOND | 1,3,DIAMOND",0.001582,1.381878,3,3,150,115,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7070006__Bstart,,B,B,victory,7,"1,2,SQUARE | 1,1,TRIANGLE | 2,1,DIAMOND | 2,2,TRIANGLE",0.001672,2.202981,3,4,110,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8080005__Astart,,A,B,victory,10,"1,1,CIRCLE | 3,2,SQUARE | 2,1,CIRCLE | 3,1,SQUARE",0.002393,2.180305,5,5,160,133,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8080006__Bstart,,B,B,victory,9,"2,2,SQUARE | 2,1,TRIANGLE | 3,3,DIAMOND | 1,1,DIAMOND",0.002037,2.749054,4,5,134,176,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090005__Astart,,A,B,victory,8,"1,1,SQUARE | 0,3,DIAMOND | 2,1,DIAMOND | 2,2,CIRCLE",0.003148,1.886050,4,4,173,135,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9090006__Bstart,,B,B,victory,9,"1,2,SQUARE | 2,2,TRIANGLE | 3,0,DIAMOND | 2,1,SQUARE",0.002507,2.694588,4,5,141,188,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1120005__Astart,,A,B,victory,12,"2,2,CIRCLE | 3,1,DIAMOND | 1,2,CIRCLE | 0,1,DIAMOND",0.004844,2.915236,6,6,169,135,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed1120006__Bstart,,B,A,victory,6,"1,2,SQUARE | 2,2,CIRCLE | 1,3,TRIANGLE | 2,1,SQUARE",0.001660,2.259318,3,3,125,151,0,0,0,0,0,1
+Génétique (baseline)__vs__Génétique++__seed2130005__Astart,,A,B,victory,4,"1,1,SQUARE | 3,1,DIAMOND | 2,1,TRIANGLE | 0,1,CIRCLE",0.001281,0.811849,2,2,114,95,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed2130006__Bstart,,B,B,victory,7,"1,2,DIAMOND | 2,1,CIRCLE | 1,1,SQUARE | 2,2,SQUARE",0.001642,2.382083,3,4,123,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3140005__Astart,,A,B,victory,10,"2,2,DIAMOND | 0,0,CIRCLE | 1,2,DIAMOND | 3,1,SQUARE",0.003839,2.268137,5,5,155,143,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed3140006__Bstart,,B,B,victory,7,"0,3,CIRCLE | 1,1,CIRCLE | 1,0,DIAMOND | 2,2,SQUARE",0.001705,2.321287,3,4,119,175,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150005__Astart,,A,B,victory,6,"1,2,CIRCLE | 3,3,TRIANGLE | 2,1,CIRCLE | 0,2,SQUARE",0.001598,1.330047,3,3,136,124,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed4150006__Bstart,,B,B,victory,7,"0,2,DIAMOND | 1,2,CIRCLE | 2,3,SQUARE | 1,1,TRIANGLE",0.002109,2.172138,3,4,121,173,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5160005__Astart,,A,B,victory,12,"1,2,SQUARE | 2,3,TRIANGLE | 2,1,DIAMOND | 1,0,CIRCLE",0.004106,2.678920,6,6,171,144,1,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed5160006__Bstart,,B,B,victory,7,"1,2,CIRCLE | 2,2,DIAMOND | 3,1,SQUARE | 2,1,CIRCLE",0.002679,2.564638,3,4,121,174,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170005__Astart,,A,B,victory,8,"2,1,TRIANGLE | 0,2,DIAMOND | 1,1,DIAMOND | 1,3,SQUARE",0.001566,1.990675,4,4,168,142,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed6170006__Bstart,,B,B,victory,9,"1,3,DIAMOND | 2,2,TRIANGLE | 3,1,DIAMOND | 2,1,CIRCLE",0.002279,2.669200,4,5,129,170,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180005__Astart,,A,B,victory,10,"1,2,CIRCLE | 3,3,SQUARE | 1,1,CIRCLE | 2,0,SQUARE",0.003489,2.341126,5,5,161,140,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed7180006__Bstart,,B,B,victory,9,"3,3,CIRCLE | 2,1,SQUARE | 1,2,TRIANGLE | 1,1,SQUARE",0.002755,2.744314,4,5,117,179,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed8190005__Astart,,A,B,no_move,12,"1,2,SQUARE | 0,3,DIAMOND | 1,1,TRIANGLE | 3,0,DIAMOND",0.003369,3.615712,6,6,187,129,1,0,0,0,0,0
+Génétique (baseline)__vs__Génétique++__seed8190006__Bstart,,B,B,victory,5,"1,0,SQUARE | 1,2,CIRCLE | 0,1,DIAMOND | 1,1,TRIANGLE",0.001394,1.734344,2,3,94,153,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200005__Astart,,A,B,victory,6,"1,2,TRIANGLE | 3,0,SQUARE | 2,1,DIAMOND | 0,2,DIAMOND",0.002054,1.407753,3,3,149,122,0,0,0,0,1,0
+Génétique (baseline)__vs__Génétique++__seed9200006__Bstart,,B,B,victory,9,"3,1,TRIANGLE | 2,2,TRIANGLE | 0,3,DIAMOND | 2,1,DIAMOND",0.001488,2.752520,4,5,133,187,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed1010001__Astart,,A,A,victory,9,"1,2,DIAMOND | 3,3,CIRCLE | 3,1,TRIANGLE | 0,1,CIRCLE",4.757512,2.664761,5,4,189,120,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1010002__Bstart,,B,A,no_move,10,"1,0,CIRCLE | 1,1,SQUARE | 2,2,CIRCLE | 0,3,DIAMOND",4.562647,3.321343,5,5,134,153,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed2020001__Astart,,A,B,victory,12,"2,2,CIRCLE | 3,3,DIAMOND | 2,1,TRIANGLE | 1,1,DIAMOND",5.467906,3.169231,6,6,187,132,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed2020002__Bstart,,B,A,no_move,8,"0,0,CIRCLE | 1,2,DIAMOND | 2,3,SQUARE | 2,1,TRIANGLE",4.265520,2.756340,4,4,129,164,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed3030001__Astart,,A,A,victory,11,"1,2,CIRCLE | 2,3,DIAMOND | 0,0,TRIANGLE | 0,3,SQUARE",5.312397,3.207109,6,5,182,135,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3030002__Bstart,,B,A,victory,12,"2,0,CIRCLE | 1,1,DIAMOND | 0,2,SQUARE | 0,3,TRIANGLE",5.328938,3.964421,6,6,142,177,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed4040001__Astart,,A,A,victory,11,"1,1,SQUARE | 0,2,TRIANGLE | 3,3,CIRCLE | 1,2,DIAMOND",5.687827,3.268400,6,5,179,138,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed4040002__Bstart,,B,A,victory,10,"1,2,SQUARE | 2,1,TRIANGLE | 2,2,DIAMOND | 0,0,CIRCLE",4.667527,3.731628,5,5,150,182,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed5050001__Astart,,A,A,no_move,9,"1,2,SQUARE | 0,3,CIRCLE | 2,1,SQUARE | 2,3,DIAMOND",4.907978,2.558909,5,4,163,132,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5050002__Bstart,,B,A,victory,10,"3,3,DIAMOND | 1,2,TRIANGLE | 2,0,DIAMOND | 1,1,TRIANGLE",4.497549,3.358438,5,5,137,161,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed6060001__Astart,,A,B,no_move,12,"1,1,CIRCLE | 0,3,TRIANGLE | 2,1,CIRCLE | 1,2,DIAMOND",5.766137,3.508948,6,6,158,141,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed6060002__Bstart,,B,A,no_move,10,"1,3,TRIANGLE | 1,1,DIAMOND | 2,2,CIRCLE | 0,3,SQUARE",4.583475,3.482016,5,5,130,173,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed7070001__Astart,,A,A,victory,9,"1,1,SQUARE | 2,2,CIRCLE | 1,2,SQUARE | 3,3,SQUARE",4.785388,3.071423,5,4,186,140,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7070002__Bstart,,B,A,no_move,12,"1,1,CIRCLE | 3,1,SQUARE | 2,2,DIAMOND | 1,2,SQUARE",5.423228,3.651884,6,6,128,190,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed8080001__Astart,,A,A,victory,9,"2,1,CIRCLE | 1,2,SQUARE | 3,3,TRIANGLE | 0,3,SQUARE",4.643036,2.716923,5,4,191,116,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8080002__Bstart,,B,B,no_move,9,"0,0,SQUARE | 1,2,TRIANGLE | 1,3,DIAMOND | 2,1,CIRCLE",4.473617,3.519017,4,5,128,170,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed9090001__Astart,,A,B,victory,12,"1,1,SQUARE | 2,1,CIRCLE | 3,2,DIAMOND | 0,3,TRIANGLE",6.093615,2.983804,6,6,186,159,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed9090002__Bstart,,B,A,victory,12,"2,2,CIRCLE | 3,0,SQUARE | 1,3,SQUARE | 1,1,DIAMOND",5.190905,3.823271,6,6,147,179,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1120001__Astart,,A,A,victory,9,"0,0,CIRCLE | 2,2,CIRCLE | 2,1,TRIANGLE | 0,3,DIAMOND",4.913985,2.635229,5,4,189,127,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1120002__Bstart,,B,B,victory,11,"2,3,TRIANGLE | 1,0,SQUARE | 3,2,DIAMOND | 1,1,CIRCLE",5.007276,3.228100,5,6,137,192,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed2130001__Astart,,A,B,no_move,12,"0,1,CIRCLE | 2,0,CIRCLE | 1,2,TRIANGLE | 0,0,DIAMOND",6.212779,3.589796,6,6,179,140,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed2130002__Bstart,,B,A,victory,12,"1,3,DIAMOND | 3,0,SQUARE | 3,3,TRIANGLE | 1,2,SQUARE",4.795929,4.158260,6,6,137,173,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3140001__Astart,,A,A,victory,11,"0,0,CIRCLE | 2,0,SQUARE | 3,2,DIAMOND | 2,2,CIRCLE",5.844675,3.232312,6,5,199,145,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3140002__Bstart,,B,A,no_move,10,"3,1,SQUARE | 1,0,TRIANGLE | 2,3,DIAMOND | 2,1,CIRCLE",4.713432,3.354054,5,5,131,166,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed4150001__Astart,,A,A,victory,11,"2,1,SQUARE | 0,0,TRIANGLE | 3,3,DIAMOND | 0,3,CIRCLE",5.765157,3.596718,6,5,189,134,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed4150002__Bstart,,B,A,no_move,8,"2,1,CIRCLE | 1,0,SQUARE | 3,3,CIRCLE | 0,2,TRIANGLE",4.286442,3.012033,4,4,134,150,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5160001__Astart,,A,B,no_move,10,"2,1,DIAMOND | 1,0,CIRCLE | 0,0,TRIANGLE | 1,2,CIRCLE",5.588768,2.999666,5,5,174,124,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5160002__Bstart,,B,A,no_move,10,"1,2,SQUARE | 1,1,CIRCLE | 2,3,DIAMOND | 3,1,TRIANGLE",4.573228,3.645092,5,5,133,169,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed6170001__Astart,,A,B,victory,10,"1,2,CIRCLE | 3,3,DIAMOND | 1,1,CIRCLE | 2,3,TRIANGLE",5.431828,2.624682,5,5,155,134,1,1,0,0,1,0
+Génétique+__vs__Génétique++__seed6170002__Bstart,,B,B,no_move,9,"1,0,SQUARE | 0,3,DIAMOND | 3,2,SQUARE | 2,1,DIAMOND",5.031961,3.383375,4,5,118,163,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed7180001__Astart,,A,A,victory,9,"3,1,TRIANGLE | 0,0,SQUARE | 2,2,CIRCLE | 1,3,DIAMOND",4.879262,3.027530,5,4,188,130,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7180002__Bstart,,B,A,no_move,8,"2,1,TRIANGLE | 2,0,SQUARE | 3,3,DIAMOND | 1,2,CIRCLE",4.238132,2.819231,4,4,131,164,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed8190001__Astart,,A,A,no_move,11,"2,2,TRIANGLE | 3,1,CIRCLE | 1,1,TRIANGLE | 3,0,DIAMOND",6.357414,3.253388,6,5,165,144,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed8190002__Bstart,,B,A,victory,10,"2,2,SQUARE | 1,1,CIRCLE | 1,0,TRIANGLE | 0,3,DIAMOND",4.491491,4.013145,5,5,136,179,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9200001__Astart,,A,A,victory,7,"1,2,CIRCLE | 0,3,DIAMOND | 3,3,TRIANGLE | 1,1,DIAMOND",3.765329,2.227308,4,3,182,111,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9200002__Bstart,,B,B,victory,9,"2,0,CIRCLE | 3,3,DIAMOND | 0,2,SQUARE | 1,1,DIAMOND",4.373948,2.876231,4,5,118,185,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed1010003__Astart,,A,B,victory,12,"3,0,TRIANGLE | 2,2,TRIANGLE | 1,1,SQUARE | 2,3,DIAMOND",5.956173,3.036217,6,6,173,147,1,1,0,0,1,0
+Génétique+__vs__Génétique++__seed1010004__Bstart,,B,A,no_move,10,"3,2,DIAMOND | 2,1,SQUARE | 2,0,CIRCLE | 1,2,SQUARE",4.607640,3.592364,5,5,121,166,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed2020003__Astart,,A,A,no_move,9,"2,1,SQUARE | 1,1,CIRCLE | 0,3,SQUARE | 3,0,DIAMOND",4.949180,2.699175,5,4,157,131,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed2020004__Bstart,,B,A,no_move,8,"3,2,SQUARE | 0,3,CIRCLE | 0,1,SQUARE | 1,1,DIAMOND",4.184100,2.775582,4,4,132,152,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed3030003__Astart,,A,B,victory,10,"2,1,DIAMOND | 0,3,TRIANGLE | 1,1,SQUARE | 0,2,CIRCLE",5.789354,2.396208,5,5,173,157,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed3030004__Bstart,,B,B,victory,11,"1,0,SQUARE | 2,1,CIRCLE | 3,3,TRIANGLE | 0,2,CIRCLE",4.959231,3.278566,5,6,118,184,0,1,0,0,1,0
+Génétique+__vs__Génétique++__seed4040003__Astart,,A,A,no_move,11,"2,2,TRIANGLE | 0,1,TRIANGLE | 1,1,DIAMOND | 2,3,CIRCLE",5.897053,3.089019,6,5,172,139,1,0,0,0,0,0
+Génétique+__vs__Génétique++__seed4040004__Bstart,,B,A,no_move,10,"3,0,SQUARE | 1,1,TRIANGLE | 2,1,SQUARE | 1,2,CIRCLE",4.970502,3.193893,5,5,152,159,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5050003__Astart,,A,B,victory,10,"1,1,TRIANGLE | 1,3,DIAMOND | 2,1,TRIANGLE | 3,3,SQUARE",5.770311,2.392522,5,5,161,156,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed5050004__Bstart,,B,A,no_move,12,"3,0,DIAMOND | 2,3,TRIANGLE | 0,0,CIRCLE | 1,1,TRIANGLE",4.820772,3.759603,6,6,129,171,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed6060003__Astart,,A,A,victory,7,"2,2,CIRCLE | 0,2,SQUARE | 1,1,DIAMOND | 2,3,TRIANGLE",4.014081,2.352005,4,3,179,120,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed6060004__Bstart,,B,B,no_move,13,"3,3,TRIANGLE | 2,1,DIAMOND | 2,0,CIRCLE | 3,2,SQUARE",5.604884,4.230025,6,7,135,187,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed7070003__Astart,,A,A,victory,11,"1,1,SQUARE | 2,0,DIAMOND | 3,0,TRIANGLE | 3,3,SQUARE",5.732794,3.163090,6,5,195,147,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7070004__Bstart,,B,A,victory,10,"0,3,SQUARE | 1,1,CIRCLE | 0,0,SQUARE | 2,2,CIRCLE",4.879100,3.559313,5,5,130,166,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8080003__Astart,,A,A,victory,7,"1,2,TRIANGLE | 1,0,DIAMOND | 3,1,SQUARE | 0,1,TRIANGLE",4.093813,2.293546,4,3,185,119,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8080004__Bstart,,B,A,victory,10,"2,2,TRIANGLE | 3,2,SQUARE | 1,3,SQUARE | 0,1,CIRCLE",4.469610,3.199639,5,5,144,169,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9090003__Astart,,A,B,no_move,8,"1,2,SQUARE | 1,0,DIAMOND | 0,0,TRIANGLE | 3,1,CIRCLE",4.798012,2.339194,4,4,166,130,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed9090004__Bstart,,B,B,victory,11,"2,2,TRIANGLE | 1,3,DIAMOND | 3,0,CIRCLE | 1,1,DIAMOND",5.024957,3.196930,5,6,119,181,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed1120003__Astart,,A,A,no_move,11,"1,2,DIAMOND | 0,3,CIRCLE | 2,1,CIRCLE | 1,1,SQUARE",5.336488,3.007859,6,5,178,135,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed1120004__Bstart,,B,B,victory,11,"0,1,SQUARE | 2,1,DIAMOND | 0,3,SQUARE | 2,2,CIRCLE",5.100458,3.088563,5,6,155,163,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed2130003__Astart,,A,A,victory,9,"2,2,CIRCLE | 3,3,SQUARE | 1,1,TRIANGLE | 0,2,DIAMOND",4.725819,2.726894,5,4,179,133,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed2130004__Bstart,,B,B,no_move,9,"0,3,CIRCLE | 2,1,DIAMOND | 2,2,TRIANGLE | 1,0,SQUARE",4.489276,3.379219,4,5,129,165,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed3140003__Astart,,A,A,victory,9,"2,1,CIRCLE | 2,2,TRIANGLE | 3,2,DIAMOND | 0,1,SQUARE",5.086683,2.835146,5,4,195,141,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3140004__Bstart,,B,A,no_move,10,"0,3,DIAMOND | 2,2,SQUARE | 2,3,DIAMOND | 1,1,SQUARE",4.523708,3.348181,5,5,127,153,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed4150003__Astart,,A,B,victory,12,"2,0,CIRCLE | 1,0,DIAMOND | 0,2,CIRCLE | 2,1,TRIANGLE",5.993285,2.933569,6,6,167,148,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed4150004__Bstart,,B,A,victory,10,"1,2,SQUARE | 0,0,TRIANGLE | 0,1,DIAMOND | 2,1,CIRCLE",4.544947,3.308354,5,5,138,167,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed5160003__Astart,,A,A,no_move,9,"0,1,CIRCLE | 3,3,TRIANGLE | 3,0,SQUARE | 2,1,DIAMOND",5.021304,2.602414,5,4,168,129,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5160004__Bstart,,B,B,victory,11,"1,3,SQUARE | 2,2,CIRCLE | 2,0,DIAMOND | 3,1,TRIANGLE",4.956760,3.206130,5,6,137,182,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed6170003__Astart,,A,B,victory,12,"2,2,CIRCLE | 0,3,CIRCLE | 2,3,SQUARE | 3,1,DIAMOND",6.043367,2.864767,6,6,187,150,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed6170004__Bstart,,B,A,victory,12,"2,1,CIRCLE | 1,2,TRIANGLE | 3,0,DIAMOND | 2,3,SQUARE",5.063778,4.001094,6,6,154,179,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7180003__Astart,,A,A,no_move,9,"3,2,DIAMOND | 1,2,CIRCLE | 1,1,DIAMOND | 2,0,SQUARE",5.060725,2.259133,5,4,156,133,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed7180004__Bstart,,B,B,victory,9,"1,2,TRIANGLE | 3,0,DIAMOND | 2,3,CIRCLE | 1,1,SQUARE",4.655041,2.773826,4,5,137,192,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed8190003__Astart,,A,A,victory,11,"1,2,DIAMOND | 3,3,TRIANGLE | 2,1,CIRCLE | 1,3,SQUARE",5.352177,3.038238,6,5,180,138,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8190004__Bstart,,B,A,victory,10,"2,2,CIRCLE | 0,3,SQUARE | 3,1,TRIANGLE | 2,1,DIAMOND",4.775352,3.403982,5,5,147,170,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9200003__Astart,,A,A,victory,11,"2,1,DIAMOND | 1,0,TRIANGLE | 1,1,SQUARE | 0,3,SQUARE",5.643410,3.097766,6,5,185,141,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9200004__Bstart,,B,A,victory,10,"0,2,TRIANGLE | 1,1,DIAMOND | 3,0,CIRCLE | 0,3,SQUARE",4.384744,3.423137,5,5,145,177,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1010005__Astart,,A,A,victory,11,"2,1,TRIANGLE | 3,2,DIAMOND | 3,3,CIRCLE | 1,0,CIRCLE",5.651977,3.152997,6,5,196,134,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1010006__Bstart,,B,A,victory,12,"0,3,DIAMOND | 3,1,SQUARE | 1,0,SQUARE | 2,2,TRIANGLE",5.154115,3.805303,6,6,148,173,1,0,0,0,0,1
+Génétique+__vs__Génétique++__seed2020005__Astart,,A,A,victory,11,"2,2,SQUARE | 2,0,DIAMOND | 0,3,CIRCLE | 1,0,DIAMOND",5.354504,2.960944,6,5,182,118,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed2020006__Bstart,,B,A,victory,8,"2,0,CIRCLE | 3,3,DIAMOND | 1,2,TRIANGLE | 0,0,DIAMOND",3.914813,3.253641,4,4,127,164,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3030005__Astart,,A,B,victory,8,"1,1,TRIANGLE | 0,2,TRIANGLE | 2,2,DIAMOND | 0,0,CIRCLE",4.462429,1.973809,4,4,169,145,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed3030006__Bstart,,B,A,victory,10,"3,2,CIRCLE | 1,1,SQUARE | 2,2,SQUARE | 0,3,DIAMOND",4.888184,3.506111,5,5,149,183,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed4040005__Astart,,A,B,victory,10,"2,2,DIAMOND | 1,3,DIAMOND | 3,0,TRIANGLE | 0,2,TRIANGLE",5.851074,2.524073,5,5,191,137,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed4040006__Bstart,,B,A,no_move,10,"3,0,TRIANGLE | 2,2,SQUARE | 1,3,TRIANGLE | 0,1,SQUARE",4.559973,3.312316,5,5,123,153,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed5050005__Astart,,A,B,no_move,8,"1,2,SQUARE | 3,0,TRIANGLE | 2,2,SQUARE | 2,3,CIRCLE",4.994962,2.243964,4,4,150,135,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed5050006__Bstart,,B,A,no_move,8,"2,0,SQUARE | 3,2,TRIANGLE | 1,0,CIRCLE | 1,1,TRIANGLE",3.996665,2.686165,4,4,121,164,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed6060005__Astart,,A,B,victory,12,"2,2,TRIANGLE | 0,1,SQUARE | 1,2,TRIANGLE | 0,0,CIRCLE",6.387190,2.919861,6,6,154,153,1,0,0,0,1,0
+Génétique+__vs__Génétique++__seed6060006__Bstart,,B,B,no_move,11,"3,0,TRIANGLE | 1,1,CIRCLE | 0,1,SQUARE | 1,2,CIRCLE",4.664415,3.779322,5,6,121,174,1,0,0,0,0,0
+Génétique+__vs__Génétique++__seed7070005__Astart,,A,A,victory,9,"2,1,DIAMOND | 1,2,CIRCLE | 1,1,TRIANGLE | 0,0,SQUARE",5.170913,2.822371,5,4,189,144,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7070006__Bstart,,B,A,no_move,10,"1,2,SQUARE | 2,1,CIRCLE | 3,2,SQUARE | 3,3,DIAMOND",4.479843,3.437275,5,5,137,151,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed8080005__Astart,,A,A,victory,11,"2,2,DIAMOND | 0,1,CIRCLE | 1,2,DIAMOND | 3,3,CIRCLE",5.466051,2.971831,6,5,173,131,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8080006__Bstart,,B,A,no_move,12,"2,2,SQUARE | 1,1,DIAMOND | 3,3,CIRCLE | 0,3,TRIANGLE",4.661146,3.921357,6,6,143,167,1,1,0,0,0,0
+Génétique+__vs__Génétique++__seed9090005__Astart,,A,A,victory,9,"1,0,CIRCLE | 0,1,DIAMOND | 2,2,SQUARE | 3,0,SQUARE",4.946362,2.637829,5,4,183,131,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9090006__Bstart,,B,A,victory,10,"1,2,SQUARE | 2,3,TRIANGLE | 0,0,TRIANGLE | 2,1,TRIANGLE",4.649398,3.364404,5,5,133,187,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed1120005__Astart,,A,B,no_move,8,"0,1,DIAMOND | 1,3,SQUARE | 2,2,DIAMOND | 3,0,SQUARE",4.918986,2.340683,4,4,152,120,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed1120006__Bstart,,B,A,victory,12,"1,2,SQUARE | 0,2,TRIANGLE | 2,2,SQUARE | 2,3,DIAMOND",5.247137,3.739843,6,6,154,167,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed2130005__Astart,,A,A,victory,11,"1,1,SQUARE | 1,3,CIRCLE | 2,2,SQUARE | 3,0,TRIANGLE",5.467787,3.027475,6,5,165,134,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed2130006__Bstart,,B,A,victory,12,"1,2,DIAMOND | 2,1,CIRCLE | 1,1,DIAMOND | 2,3,SQUARE",4.957135,3.834663,6,6,152,168,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3140005__Astart,,A,A,victory,11,"1,2,TRIANGLE | 2,1,DIAMOND | 3,3,CIRCLE | 1,1,DIAMOND",5.168502,3.031425,6,5,200,120,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed3140006__Bstart,,B,A,victory,12,"0,3,CIRCLE | 3,2,SQUARE | 1,3,TRIANGLE | 2,1,DIAMOND",4.726430,3.843826,6,6,138,168,1,0,0,0,0,1
+Génétique+__vs__Génétique++__seed4150005__Astart,,A,A,no_move,11,"2,1,DIAMOND | 1,2,CIRCLE | 3,3,TRIANGLE | 2,0,SQUARE",5.544837,3.306413,6,5,170,129,0,1,0,0,0,0
+Génétique+__vs__Génétique++__seed4150006__Bstart,,B,B,victory,11,"0,2,DIAMOND | 1,1,CIRCLE | 2,3,TRIANGLE | 0,3,SQUARE",4.958757,3.155263,5,6,134,175,0,1,0,0,1,0
+Génétique+__vs__Génétique++__seed5160005__Astart,,A,A,victory,7,"2,1,CIRCLE | 2,2,DIAMOND | 1,1,SQUARE | 3,2,DIAMOND",4.020720,2.267978,4,3,186,114,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed5160006__Bstart,,B,B,victory,9,"1,2,CIRCLE | 2,3,SQUARE | 3,2,TRIANGLE | 0,0,SQUARE",4.341139,2.667588,4,5,122,188,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed6170005__Astart,,A,A,victory,9,"1,1,SQUARE | 0,3,DIAMOND | 2,2,CIRCLE | 2,1,DIAMOND",4.860181,2.669606,5,4,192,121,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed6170006__Bstart,,B,B,no_move,11,"1,3,DIAMOND | 1,1,TRIANGLE | 3,2,CIRCLE | 2,2,TRIANGLE",4.905334,3.531274,5,6,126,179,0,0,0,0,0,0
+Génétique+__vs__Génétique++__seed7180005__Astart,,A,A,victory,11,"1,0,SQUARE | 3,2,TRIANGLE | 3,3,SQUARE | 1,2,DIAMOND",5.679065,2.990001,6,5,173,141,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed7180006__Bstart,,B,A,victory,10,"3,3,CIRCLE | 2,0,SQUARE | 2,2,DIAMOND | 0,1,TRIANGLE",4.198204,3.369114,5,5,142,166,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed8190005__Astart,,A,B,victory,10,"3,1,DIAMOND | 1,3,DIAMOND | 2,1,CIRCLE | 1,0,SQUARE",5.287366,2.347311,5,5,175,138,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed8190006__Bstart,,B,A,victory,10,"1,0,SQUARE | 1,1,TRIANGLE | 2,3,SQUARE | 0,2,CIRCLE",4.570074,3.351311,5,5,146,163,0,0,0,0,0,1
+Génétique+__vs__Génétique++__seed9200005__Astart,,A,B,victory,10,"1,1,SQUARE | 2,3,CIRCLE | 2,2,DIAMOND | 0,1,CIRCLE",5.429087,2.287798,5,5,172,128,0,0,0,0,1,0
+Génétique+__vs__Génétique++__seed9200006__Bstart,,B,B,victory,9,"3,1,TRIANGLE | 2,3,DIAMOND | 2,2,CIRCLE | 1,0,DIAMOND",4.420013,2.802756,4,5,118,184,0,0,0,0,1,0

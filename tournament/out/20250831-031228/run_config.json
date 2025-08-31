@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "2025-08-31T03:12:29+00:00",
+  "out_dir": "/Users/danyellambert/Downloads/quantik-test/tournament/out/20250831-031228",
+  "config": {
+    "SEEDS": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707,
+      808,
+      909,
+      112,
+      213,
+      314,
+      415,
+      516,
+      617,
+      718,
+      819,
+      920
+    ],
+    "GAMES_PER_SEED": 30,
+    "FILTER_MUTE": true,
+    "PROBE_TIMEOUT": 1.75,
+    "TIME_PER_MOVE": null,
+    "USE_SPRT": false,
+    "SPRT_P0": 0.5,
+    "SPRT_P1": 0.6,
+    "SPRT_ALPHA": 0.05,
+    "SPRT_BETA": 0.1,
+    "BOOTSTRAP_N": 2000,
+    "USE_GLICKO": true,
+    "GLICKO_START_RATING": 1500.0,
+    "GLICKO_START_RD": 350.0,
+    "SHOW_PER_GAME_LINES": true,
+    "FIRST_PLIES_TO_LOG": 4,
+    "TOP_OPENINGS_TO_SHOW": 8
+  },
+  "ais_discovered": [
+    {
+      "name": "Génétique (éval AB)",
+      "module": "ai_players.genetic_ab_eval.algorithme",
+      "cls": "QuantikAI"
+    },
+    {
+      "name": "MCTS+",
+      "module": "ai_players.mcts_adv.algorithme",
+      "cls": "QuantikAI"
+    }
+  ],
+  "ais_excluded_probe_mute": [],
+  "import_errors": [],
+  "ai_module_hashes": {
+    "Génétique (éval AB)": "785dde5c",
+    "MCTS+": "ec340627"
+  }
+}

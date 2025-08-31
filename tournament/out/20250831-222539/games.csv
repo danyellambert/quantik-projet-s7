@@ -1,0 +1,19 @@
+game_uid,pair,starter,winner,end_reason,plies_total,opening,time_p1,time_p2,moves_p1,moves_p2,branch_sum_p1,branch_sum_p2,forced_p1,forced_p2,missed_win_p1,missed_win_p2,gave_opp_win_p1,gave_opp_win_p2
+AlphaBeta++__vs__MCTS+__seed10010001__Astart,,A,A,victory,11,"1,1,CIRCLE | 2,0,DIAMOND | 2,2,SQUARE | 0,1,TRIANGLE",3.558495,6.000503,6,5,196,141,0,0,0,0,0,1
+AlphaBeta++__vs__MCTS+__seed10010002__Bstart,,B,B,no_move,11,"2,1,TRIANGLE | 1,2,CIRCLE | 0,0,DIAMOND | 1,3,SQUARE",2.800376,7.200760,5,6,129,192,1,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10020001__Astart,,A,B,no_move,10,"1,1,CIRCLE | 3,2,TRIANGLE | 2,2,SQUARE | 0,3,DIAMOND",3.570469,6.000434,5,5,170,132,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10020002__Bstart,,B,B,victory,9,"1,0,CIRCLE | 2,1,CIRCLE | 0,2,DIAMOND | 0,1,SQUARE",2.649968,4.800653,4,5,134,201,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10030001__Astart,,A,B,victory,8,"1,1,CIRCLE | 0,3,DIAMOND | 0,2,SQUARE | 1,0,TRIANGLE",3.539909,3.600743,4,4,164,137,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10030002__Bstart,,B,B,victory,9,"3,1,TRIANGLE | 2,2,CIRCLE | 1,0,CIRCLE | 2,3,TRIANGLE",2.815210,4.800916,4,5,140,187,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10040001__Astart,,A,B,victory,12,"1,1,CIRCLE | 3,0,SQUARE | 2,0,TRIANGLE | 0,1,DIAMOND",3.783525,6.000464,6,6,176,139,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10040002__Bstart,,B,A,victory,10,"1,3,TRIANGLE | 2,1,CIRCLE | 0,0,SQUARE | 2,2,TRIANGLE",2.837104,6.000531,5,5,142,188,0,0,0,0,0,1
+AlphaBeta++__vs__MCTS+__seed10050001__Astart,,A,B,no_move,12,"1,1,CIRCLE | 2,3,DIAMOND | 2,2,SQUARE | 3,0,TRIANGLE",3.497294,7.200425,6,6,174,140,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10050002__Bstart,,B,A,victory,10,"1,2,CIRCLE | 2,1,CIRCLE | 0,0,SQUARE | 3,2,SQUARE",2.795523,6.000752,5,5,150,181,0,0,0,0,0,1
+AlphaBeta++__vs__MCTS+__seed10060001__Astart,,A,A,victory,11,"1,1,CIRCLE | 2,1,SQUARE | 0,3,SQUARE | 3,2,TRIANGLE",3.667048,6.000534,6,5,191,151,0,0,0,0,0,1
+AlphaBeta++__vs__MCTS+__seed10060002__Bstart,,B,B,victory,11,"0,2,TRIANGLE | 1,1,CIRCLE | 3,3,SQUARE | 0,1,DIAMOND",2.672764,6.000751,5,6,148,179,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10070001__Astart,,A,B,no_move,10,"1,1,CIRCLE | 3,2,DIAMOND | 2,2,SQUARE | 0,3,TRIANGLE",3.519221,6.000429,5,5,170,132,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10070002__Bstart,,B,B,no_move,9,"2,0,DIAMOND | 1,1,CIRCLE | 3,3,TRIANGLE | 3,2,SQUARE",2.739214,6.000507,4,5,127,170,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10080001__Astart,,A,B,no_move,10,"1,1,CIRCLE | 3,0,SQUARE | 2,0,TRIANGLE | 0,1,DIAMOND",3.751238,6.001908,5,5,171,132,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10080002__Bstart,,B,B,no_move,9,"0,0,DIAMOND | 2,2,CIRCLE | 3,1,SQUARE | 1,0,TRIANGLE",2.772037,6.000559,4,5,127,170,0,0,0,0,0,0
+AlphaBeta++__vs__MCTS+__seed10090001__Astart,,A,B,victory,12,"1,1,CIRCLE | 3,0,SQUARE | 2,0,TRIANGLE | 0,1,DIAMOND",3.752264,6.000431,6,6,176,139,0,0,0,0,1,0
+AlphaBeta++__vs__MCTS+__seed10090002__Bstart,,B,B,no_move,9,"1,2,SQUARE | 2,1,CIRCLE | 3,3,DIAMOND | 0,3,TRIANGLE",2.776694,6.000737,4,5,128,172,0,0,0,0,0,0
